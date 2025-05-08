@@ -1,0 +1,12 @@
+[
+  {
+    "tipo": "usuario",
+    "mensagem": "oi hoje vamos programar ",
+    "timestamp": "2025-05-08T18:58:52.419927"
+  },
+  {
+    "tipo": "agente",
+    "mensagem": "Oi! Tudo ótimo, vou ficar feliz em ajudar você com isso. Por favor, fique à vontade para me explicar o que você gostaria de programar e quais são os requisitos específicos.\n\nSe você precisar de ajuda com alguma parte do processo de programação, não hesite em perguntar. Estou aqui para ajudar!",
+    "timestamp": "2025-05-08T18:59:45.157524"
+  }
+]

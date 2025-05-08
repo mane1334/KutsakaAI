@@ -1,0 +1,15 @@
+# Versionamento Semântico (MAJOR.MINOR.PATCH)
+# MAJOR: mudanças incompatíveis com versões anteriores
+# MINOR: novas funcionalidades mantendo compatibilidade
+# PATCH: correções de bugs mantendo compatibilidade
+
+VERSION = "1.0.0"
+LAST_UPDATE = "2024-03-20"
+CHANGELOG = """
+1.0.0 (2024-03-20)
+- Versão inicial do agente
+- Implementação de reconhecimento de voz
+- Sistema de TTS
+- Integração com LLMs locais
+- Ferramentas básicas de sistema
+""" 

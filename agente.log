@@ -1,0 +1,186 @@
+2025-05-06 22:53:46,538 - __main__ - ERROR - Erro fatal: OPENAI_API_KEY não encontrada nas variáveis de ambiente
+2025-05-06 22:54:20,624 - __main__ - ERROR - Erro fatal: OPENAI_API_KEY não encontrada nas variáveis de ambiente
+2025-05-06 23:15:29,542 - __main__ - ERROR - Erro fatal: OPENAI_API_KEY não encontrada nas variáveis de ambiente
+2025-05-06 23:20:06,990 - __main__ - ERROR - Erro fatal: OPENAI_API_KEY não encontrada nas variáveis de ambiente
+2025-05-06 23:21:18,659 - __main__ - ERROR - Erro fatal: OPENAI_API_KEY não encontrada nas variáveis de ambiente
+2025-05-06 23:24:41,345 - __main__ - ERROR - Erro fatal: 'functools._lru_cache_wrapper' object has no attribute '__name__'
+2025-05-06 23:28:24,666 - __main__ - ERROR - Erro fatal: 'functools._lru_cache_wrapper' object has no attribute '__name__'
+2025-05-06 23:32:28,279 - __main__ - ERROR - Erro fatal: 'functools._lru_cache_wrapper' object has no attribute '__name__'
+2025-05-06 23:34:26,701 - __main__ - ERROR - Erro fatal: 'functools._lru_cache_wrapper' object has no attribute '__name__'
+2025-05-06 23:38:36,791 - __main__ - ERROR - Erro fatal: 'functools._lru_cache_wrapper' object has no attribute '__name__'
+2025-05-06 23:44:11,723 - __main__ - ERROR - Erro fatal: 'functools._lru_cache_wrapper' object has no attribute '__name__'
+2025-05-06 23:46:14,610 - __main__ - ERROR - Erro fatal: 'functools._lru_cache_wrapper' object has no attribute '__name__'
+2025-05-06 23:57:47,131 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-07 00:05:54,511 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 00:06:18,119 - root - INFO - Pesquisando na web por: 'capital de mozambique'
+2025-05-07 00:06:20,207 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 00:06:40,561 - agente - INFO - Mensagem processada com sucesso: qual e a capital de mozambique...
+2025-05-07 00:08:20,401 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 00:08:43,315 - agente - ERROR - Erro ao processar mensagem: Acesso negado ao arquivo: C:\path\to\hello.html
+2025-05-07 00:13:52,492 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 00:14:02,157 - root - INFO - Pesquisando na web por: 'tempo de hoje em Mozambique'
+2025-05-07 00:14:03,726 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 00:14:32,796 - agente - INFO - Mensagem processada com sucesso: pesquise a temperatura de hoje em mozambique usand...
+2025-05-07 00:15:31,400 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 00:16:34,174 - agente - INFO - Mensagem processada com sucesso: abra o programa office...
+2025-05-07 00:23:47,892 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 00:24:12,585 - root - INFO - Pesquisando na web por: 'quantos paises tem o planeta terra'
+2025-05-07 00:24:14,288 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 00:24:39,033 - agente - INFO - Mensagem processada com sucesso: quaantos paises tem o planeta terra se puder use a...
+2025-05-07 00:24:56,781 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 00:25:15,160 - agente - INFO - Mensagem processada com sucesso: limpar memoria...
+2025-05-07 00:25:57,258 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 00:26:24,716 - agente - INFO - Mensagem processada com sucesso: liste todas ferramentas disponiveis...
+2025-05-07 00:29:19,387 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-07 00:29:38,671 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 00:30:19,747 - agente - INFO - Mensagem processada com sucesso: liste as feramentas disponiveis...
+2025-05-07 00:31:46,226 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 00:32:11,400 - agente - ERROR - Erro ao processar mensagem: 1 validation error for criar_word
+texto
+  Field required [type=missing, input_value={'caminho_arquivo': '/pat...e, resumo e conclusão'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-05-07 00:35:26,431 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 00:36:10,249 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 00:36:36,178 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 00:37:04,138 - agente - INFO - Mensagem processada com sucesso: cria uma historia brainrot e guarda o em um arquiv...
+2025-05-07 00:40:11,161 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-07 00:41:25,570 - agente - INFO - Histórico limpo com sucesso
+2025-05-07 00:46:16,130 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-07 00:46:32,815 - agente - ERROR - Erro ao processar mensagem: 'Input to ChatPromptTemplate is missing variables {\'"src"\', \' return a + b; \'}.  Expected: [\' return a + b; \', \'"src"\', \'agent_scratchpad\', \'chat_history\', \'input\'] Received: [\'input\', \'chat_history\', \'intermediate_steps\', \'agent_scratchpad\']\nNote: if you intended {"src"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"src"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+2025-05-07 20:32:11,375 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-07 20:36:42,088 - agente - ERROR - Erro ao processar mensagem: 'Input to ChatPromptTemplate is missing variables {\' return a + b; \', \'"src"\'}.  Expected: [\' return a + b; \', \'"src"\', \'agent_scratchpad\', \'chat_history\', \'input\'] Received: [\'input\', \'chat_history\', \'intermediate_steps\', \'agent_scratchpad\']\nNote: if you intended { return a + b; } to be part of the string and not a variable, please escape it with double curly braces like: \'{{ return a + b; }}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+2025-05-07 20:36:59,546 - agente - ERROR - Erro ao processar mensagem: 'Input to ChatPromptTemplate is missing variables {\' return a + b; \', \'"src"\'}.  Expected: [\' return a + b; \', \'"src"\', \'agent_scratchpad\', \'chat_history\', \'input\'] Received: [\'input\', \'chat_history\', \'intermediate_steps\', \'agent_scratchpad\']\nNote: if you intended { return a + b; } to be part of the string and not a variable, please escape it with double curly braces like: \'{{ return a + b; }}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+2025-05-07 20:36:59,575 - agente - ERROR - Erro ao processar mensagem: 'Input to ChatPromptTemplate is missing variables {\' return a + b; \', \'"src"\'}.  Expected: [\' return a + b; \', \'"src"\', \'agent_scratchpad\', \'chat_history\', \'input\'] Received: [\'input\', \'chat_history\', \'intermediate_steps\', \'agent_scratchpad\']\nNote: if you intended { return a + b; } to be part of the string and not a variable, please escape it with double curly braces like: \'{{ return a + b; }}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+2025-05-07 20:37:06,537 - agente - ERROR - Erro ao processar mensagem: 'Input to ChatPromptTemplate is missing variables {\' return a + b; \', \'"src"\'}.  Expected: [\' return a + b; \', \'"src"\', \'agent_scratchpad\', \'chat_history\', \'input\'] Received: [\'input\', \'chat_history\', \'intermediate_steps\', \'agent_scratchpad\']\nNote: if you intended { return a + b; } to be part of the string and not a variable, please escape it with double curly braces like: \'{{ return a + b; }}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+2025-05-07 20:37:10,764 - agente - ERROR - Erro ao processar mensagem: 'Input to ChatPromptTemplate is missing variables {\' return a + b; \', \'"src"\'}.  Expected: [\' return a + b; \', \'"src"\', \'agent_scratchpad\', \'chat_history\', \'input\'] Received: [\'input\', \'chat_history\', \'intermediate_steps\', \'agent_scratchpad\']\nNote: if you intended { return a + b; } to be part of the string and not a variable, please escape it with double curly braces like: \'{{ return a + b; }}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+2025-05-07 20:38:23,678 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-07 20:38:32,599 - agente - ERROR - Erro ao processar mensagem: 'Input to ChatPromptTemplate is missing variables {\' return a + b; \', \'"src"\'}.  Expected: [\' return a + b; \', \'"src"\', \'agent_scratchpad\', \'chat_history\', \'input\'] Received: [\'input\', \'chat_history\', \'intermediate_steps\', \'agent_scratchpad\']\nNote: if you intended { return a + b; } to be part of the string and not a variable, please escape it with double curly braces like: \'{{ return a + b; }}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+2025-05-07 20:38:40,283 - agente - ERROR - Erro ao processar mensagem: 'Input to ChatPromptTemplate is missing variables {\' return a + b; \', \'"src"\'}.  Expected: [\' return a + b; \', \'"src"\', \'agent_scratchpad\', \'chat_history\', \'input\'] Received: [\'input\', \'chat_history\', \'intermediate_steps\', \'agent_scratchpad\']\nNote: if you intended { return a + b; } to be part of the string and not a variable, please escape it with double curly braces like: \'{{ return a + b; }}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+2025-05-07 20:38:59,554 - agente - ERROR - Erro ao processar mensagem: 'Input to ChatPromptTemplate is missing variables {\' return a + b; \', \'"src"\'}.  Expected: [\' return a + b; \', \'"src"\', \'agent_scratchpad\', \'chat_history\', \'input\'] Received: [\'input\', \'chat_history\', \'intermediate_steps\', \'agent_scratchpad\']\nNote: if you intended { return a + b; } to be part of the string and not a variable, please escape it with double curly braces like: \'{{ return a + b; }}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+2025-05-07 21:05:08,783 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-07 21:05:08,895 - agente - ERROR - Erro ao processar mensagem: 'Input to ChatPromptTemplate is missing variables {\'"src"\', \' return a + b; \'}.  Expected: [\' return a + b; \', \'"src"\', \'agent_scratchpad\', \'chat_history\', \'input\'] Received: [\'input\', \'chat_history\', \'intermediate_steps\', \'agent_scratchpad\']\nNote: if you intended {"src"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"src"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+2025-05-07 21:07:39,822 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-07 21:07:39,846 - agente - ERROR - Erro ao processar mensagem: 'Input to ChatPromptTemplate is missing variables {\' return a + b; \', \'"src"\'}.  Expected: [\' return a + b; \', \'"src"\', \'agent_scratchpad\', \'chat_history\', \'input\'] Received: [\'input\', \'chat_history\', \'intermediate_steps\', \'agent_scratchpad\']\nNote: if you intended { return a + b; } to be part of the string and not a variable, please escape it with double curly braces like: \'{{ return a + b; }}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+2025-05-07 21:10:31,303 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-07 21:10:40,775 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 21:12:00,132 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 21:12:07,145 - agente - INFO - Mensagem processada com sucesso: oi...
+2025-05-07 21:12:18,396 - agente - INFO - Mensagem processada com sucesso: oi...
+2025-05-07 21:23:59,141 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-07 21:23:59,287 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 21:24:10,915 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 21:24:55,620 - agente - INFO - Mensagem processada com sucesso: oi...
+2025-05-07 21:25:07,348 - agente - INFO - Mensagem processada com sucesso: oi...
+2025-05-07 21:30:12,526 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 21:30:23,463 - agente - INFO - Mensagem processada com sucesso: tudo bem?...
+2025-05-07 21:30:56,958 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 21:31:20,252 - root - INFO - Pesquisando na web por: 'coisas aconteceram hoje'
+2025-05-07 21:31:22,570 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 21:32:02,944 - agente - INFO - Mensagem processada com sucesso: bem e ai? me fale de coisas que aconteceram hoje p...
+2025-05-07 21:33:50,939 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 21:34:35,123 - agente - INFO - Mensagem processada com sucesso: agora quero que faca um artigo e grave o arquivo e...
+2025-05-07 21:36:53,855 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-07 21:36:53,958 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 21:37:45,266 - agente - INFO - Mensagem processada com sucesso: oi...
+2025-05-07 21:39:06,989 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 21:39:22,661 - agente - INFO - Mensagem processada com sucesso: oque aconteceu hoje entre a india e pakistao pode ...
+2025-05-07 21:41:13,590 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 21:41:30,732 - agente - INFO - Mensagem processada com sucesso: oi...
+2025-05-07 21:43:57,968 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 21:44:17,948 - agente - INFO - Mensagem processada com sucesso: oi...
+2025-05-07 21:45:31,339 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-07 21:45:31,415 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 21:45:40,338 - agente - INFO - Mensagem processada com sucesso: oi tudo bem?...
+2025-05-07 21:47:09,987 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 21:47:29,983 - agente - INFO - Mensagem processada com sucesso: oque aconteceu hoje entre israel e pakistao? podes...
+2025-05-07 21:52:02,201 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-07 21:52:02,315 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 21:52:26,146 - agente - INFO - Mensagem processada com sucesso: oque aconteceu na india no dia de ontem use a web ...
+2025-05-07 21:56:03,846 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 21:56:24,203 - agente - INFO - Mensagem processada com sucesso: oque aconteceu na india no dia de ontem use a web ...
+2025-05-07 22:10:12,226 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 22:10:28,841 - agente - INFO - Mensagem processada com sucesso: mozambique tem quantas capitais...
+2025-05-07 22:11:43,743 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 22:12:09,057 - agente - INFO - Mensagem processada com sucesso: como assim 3? veja a web e me manda a resposta...
+2025-05-07 22:14:28,526 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 22:15:13,637 - agente - INFO - Mensagem processada com sucesso: gere uma pagina html profissional de um site de ve...
+2025-05-07 22:18:28,723 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 22:19:29,256 - agente - INFO - Mensagem processada com sucesso: gere uma pagina html profissional de um site de ve...
+2025-05-07 22:20:44,351 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 22:26:24,459 - agente - INFO - Mensagem processada com sucesso: gere um codigo python que faca um chao e um triang...
+2025-05-07 22:29:06,671 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 22:30:23,773 - agente - INFO - Mensagem processada com sucesso: agora explique esse codigo...
+2025-05-07 22:32:35,504 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 22:33:49,310 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 22:34:06,617 - agente - INFO - Mensagem processada com sucesso: faca uma carta de pedido de emprego guarde em um a...
+2025-05-07 23:26:33,984 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 23:27:18,564 - agente - INFO - Mensagem processada com sucesso: oi qual e a temperatura de hoje? pode usar a web...
+2025-05-07 23:54:19,202 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 23:55:06,721 - agente - INFO - Mensagem processada com sucesso: conta uma historia brainrot seja criativo mencione...
+2025-05-07 23:55:32,452 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 00:00:02,912 - agente - INFO - Mensagem processada com sucesso: retifique os seus erros...
+2025-05-08 00:03:20,532 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 00:04:28,378 - agente - INFO - Mensagem processada com sucesso: me de 5 planos de vendas de consoles online  desde...
+2025-05-08 00:07:58,896 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 00:08:50,771 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 00:09:20,860 - agente - INFO - Mensagem processada com sucesso: agora gere um codigo html da pagina inicial Mane G...
+2025-05-08 00:11:02,652 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 00:11:58,168 - agente - INFO - Mensagem processada com sucesso: mostre...
+2025-05-08 00:13:39,543 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 00:14:31,867 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 00:14:47,209 - agente - INFO - Mensagem processada com sucesso: use o gerar_codigo_com_coder para gerar um html me...
+2025-05-08 14:41:51,567 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-08 14:42:01,479 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 14:43:20,467 - agente - INFO - Mensagem processada com sucesso: oi...
+2025-05-08 14:45:59,471 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 14:47:36,980 - agente - INFO - Mensagem processada com sucesso: ola tudo bem?...
+2025-05-08 14:49:16,325 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-08 14:49:16,674 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 14:54:22,890 - agente - INFO - Mensagem processada com sucesso: oi...
+2025-05-08 14:57:53,321 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 15:03:19,844 - agente - INFO - Mensagem processada com sucesso:  quero que crie 3 planos para site de vendas a ret...
+2025-05-08 15:16:50,804 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 15:28:20,349 - agente - INFO - Mensagem processada com sucesso: agora monte isso numa pagina web se puder peca ao ...
+2025-05-08 15:43:56,782 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-08 15:43:57,030 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 15:48:33,365 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 15:49:37,140 - agente - INFO - Mensagem processada com sucesso: oi tudo bem? como podemos criar um site de vendas?...
+2025-05-08 15:55:57,584 - agente - INFO - Mensagem processada com sucesso: oi tudo bem? como podemos criar um site de vendas?...
+2025-05-08 16:04:31,710 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-08 16:04:54,116 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 16:06:23,351 - agente - INFO - Mensagem processada com sucesso: cria essa pagina...
+2025-05-08 16:06:50,952 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 16:08:40,486 - agente - INFO - Mensagem processada com sucesso: veja o contexto para se lembrar do que falavamos...
+2025-05-08 16:44:58,790 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 16:47:22,608 - agente - INFO - Mensagem processada com sucesso: oi tudo bem? podes criar um jogo simples em python...
+2025-05-08 16:49:49,078 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 16:50:11,854 - agente - INFO - Mensagem processada com sucesso: podes criar um jogo simples em python e guarda no ...
+2025-05-08 16:51:08,029 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 16:54:43,958 - agente - INFO - Mensagem processada com sucesso: cria um jogo simples em python de cobra...
+2025-05-08 16:57:32,158 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 17:02:51,686 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 17:11:37,402 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 17:14:41,403 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-08 17:14:41,471 - agente - ERROR - Erro ao processar mensagem: 'Input to ChatPromptTemplate is missing variables {\'\\n    "src"\', \'\\n    "index.html"\'}.  Expected: [\'\\n    "index.html"\', \'\\n    "src"\', \'agent_scratchpad\', \'chat_history\', \'input\'] Received: [\'input\', \'chat_history\', \'intermediate_steps\', \'agent_scratchpad\']\nNote: if you intended {\n    "src"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "src"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+2025-05-08 17:15:57,705 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-08 17:15:57,736 - agente - ERROR - Erro ao processar mensagem: 'Input to ChatPromptTemplate is missing variables {\'\\n    "index.html"\', \'\\n    "src"\'}.  Expected: [\'\\n    "index.html"\', \'\\n    "src"\', \'agent_scratchpad\', \'chat_history\', \'input\'] Received: [\'input\', \'chat_history\', \'intermediate_steps\', \'agent_scratchpad\']\nNote: if you intended {\n    "index.html"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "index.html"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+2025-05-08 17:17:03,410 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-08 17:17:03,442 - agente - ERROR - Erro ao processar mensagem: 'Input to ChatPromptTemplate is missing variables {\'\\n    "index.html"\', \'\\n    "src"\'}.  Expected: [\'\\n    "index.html"\', \'\\n    "src"\', \'agent_scratchpad\', \'chat_history\', \'input\'] Received: [\'input\', \'chat_history\', \'intermediate_steps\', \'agent_scratchpad\']\nNote: if you intended {\n    "index.html"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "index.html"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+2025-05-08 17:19:06,387 - agente - INFO - Mensagem processada com sucesso: esse arquivo nao foi criado no directorio que cita...
+2025-05-08 17:24:45,330 - agente - INFO - Mensagem processada com sucesso: mova esse arquivo para C:\Users\Sr.Africano\Deskto...
+2025-05-08 18:29:25,801 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-08 18:29:58,073 - agente - ERROR - Erro ao processar mensagem: 'Input to ChatPromptTemplate is missing variables {\'\\n    "index.html"\', \'\\n    "src"\', \' return a + b; \'}.  Expected: [\'\\n    "index.html"\', \'\\n    "src"\', \' return a + b; \', \'agent_scratchpad\', \'chat_history\', \'input\'] Received: [\'input\', \'chat_history\', \'intermediate_steps\', \'agent_scratchpad\']\nNote: if you intended {\n    "index.html"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "index.html"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+2025-05-08 18:30:04,188 - agente - ERROR - Erro ao processar mensagem: 'Input to ChatPromptTemplate is missing variables {\'\\n    "index.html"\', \'\\n    "src"\', \' return a + b; \'}.  Expected: [\'\\n    "index.html"\', \'\\n    "src"\', \' return a + b; \', \'agent_scratchpad\', \'chat_history\', \'input\'] Received: [\'input\', \'chat_history\', \'intermediate_steps\', \'agent_scratchpad\']\nNote: if you intended {\n    "index.html"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "index.html"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+2025-05-08 18:30:28,566 - agente - ERROR - Erro ao processar mensagem: 'Input to ChatPromptTemplate is missing variables {\'\\n    "index.html"\', \'\\n    "src"\', \' return a + b; \'}.  Expected: [\'\\n    "index.html"\', \'\\n    "src"\', \' return a + b; \', \'agent_scratchpad\', \'chat_history\', \'input\'] Received: [\'input\', \'chat_history\', \'intermediate_steps\', \'agent_scratchpad\']\nNote: if you intended {\n    "index.html"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "index.html"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+2025-05-08 18:36:13,898 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-08 18:39:09,044 - agente - ERROR - Erro ao processar mensagem: 'Input to ChatPromptTemplate is missing variables {\'\\n    "index.html"\', \' return a + b; \', \'\\n    "src"\'}.  Expected: [\'\\n    "index.html"\', \'\\n    "src"\', \' return a + b; \', \'agent_scratchpad\', \'chat_history\', \'input\'] Received: [\'input\', \'chat_history\', \'intermediate_steps\', \'agent_scratchpad\']\nNote: if you intended {\n    "index.html"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n    "index.html"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+2025-05-08 18:41:54,057 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-08 18:45:49,984 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-08 18:49:01,990 - agente - ERROR - Erro ao processar mensagem: 'Input to ChatPromptTemplate is missing variables {\' return a + b; \', \'\\n    "index.html"\', \'\\n    "src"\'}.  Expected: [\'\\n    "index.html"\', \'\\n    "src"\', \' return a + b; \', \'agent_scratchpad\', \'chat_history\', \'input\'] Received: [\'input\', \'chat_history\', \'intermediate_steps\', \'agent_scratchpad\']\nNote: if you intended { return a + b; } to be part of the string and not a variable, please escape it with double curly braces like: \'{{ return a + b; }}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+2025-05-08 18:55:44,390 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-08 18:58:52,626 - httpx - INFO - HTTP Request: POST http://172.20.10.9:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 18:59:45,162 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250508_185945.json'
+2025-05-08 18:59:45,163 - agente - INFO - Mensagem processada com sucesso: oi hoje vamos programar ...
+2025-05-08 19:00:24,137 - httpx - INFO - HTTP Request: POST http://172.20.10.9:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 19:06:31,615 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250508_190631.json'
+2025-05-08 19:06:31,616 - agente - INFO - Mensagem processada com sucesso: vamos antes definir o directorio que vamos trabalh...
