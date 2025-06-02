@@ -43,7 +43,7 @@
     },
     "openrouter": {
         "enabled": true,
-        "api_key": "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",
+        "api_key": "USER_PROVIDED_OPENROUTER_API_KEY",
         "api_base": "https://openrouter.ai/api/v1",
         "modelo_coder": "deepseek/deepseek-r1-0528-qwen3-8b:free",
         "modelo_geral": "meta-llama/llama-3.3-70b-instruct:free",

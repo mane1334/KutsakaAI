@@ -149,8 +149,8 @@ DEFAULT_CONFIG = {
         "host": "https://app.posthog.com"
     },
     "openrouter": {
-        "enabled": False,
-        "api_key": "",
+        "enabled": True,
+        "api_key": "USER_PROVIDED_OPENROUTER_API_KEY",
         "api_base": "https://openrouter.ai/api/v1",
         "modelo_coder": "qwen/qwen-2.5-coder-32b-instruct:free",
         "timeout": 60
