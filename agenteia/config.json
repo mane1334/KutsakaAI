@@ -1,0 +1,91 @@
+{
+    "llm": {
+        "provider": "ollama",
+        "model": "qwen3:1.7b",
+        "url": "http://localhost:11434",
+        "temperature": 0.7,
+        "top_p": 0.9
+    },
+    "rag": {
+        "enabled": true,
+        "k_retrieval": 3,
+        "similarity_threshold": 0.7,
+        "embedding_model": "qwen3:1.7b",
+        "vector_db_dir": "vector_db",
+        "chunking": {
+            "chunk_size": 1000,
+            "chunk_overlap": 200
+        }
+    },
+    "agent": {
+        "max_iterations": 3,
+        "early_stopping": true,
+        "historico_dir": "historico",
+        "temp_dir": "temp",
+        "default_code_output_dir": "projetos"
+    },
+    "auto_improve": {
+        "enabled": true,
+        "min_tool_calls": 5,
+        "tool_failure_threshold": 0.5,
+        "index_feedback": true
+    },
+    "logging": {
+        "level": "INFO",
+        "file": "agenteia.log",
+        "max_size": 10485760,
+        "backup_count": 5
+    },
+    "posthog": {
+        "enabled": false,
+        "api_key": "",
+        "host": "https://app.posthog.com"
+    },
+    "openrouter": {
+        "enabled": true,
+        "api_key": "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",
+        "api_base": "https://openrouter.ai/api/v1",
+        "modelo_coder": "deepseek/deepseek-r1-0528-qwen3-8b:free",
+        "modelo_geral": "meta-llama/llama-3.3-70b-instruct:free",
+        "base_url": "https://openrouter.ai/api/v1",
+        "headers": {
+            "HTTP-Referer": "https://github.com/yourusername/agenteia",
+            "X-Title": "AgenteIA",
+            "X-Provider": "openrouter"
+        },
+        "temperature": 0.3,
+        "max_tokens": 4000,
+        "timeout": 60
+    },
+    "ollama": {
+        "base_url": "http://localhost:11434",
+        "timeout": 120
+    },
+    "available_models": {
+        "geral": ["qwen3:1.7b", "qwen2.5-coder-3b-instruct"],
+        "coder": ["qwen2.5-coder-3b-instruct", "qwen3:1.7b"],
+        "assistente": ["qwen3:1.7b"]
+    },
+    "security": {
+        "max_file_size": 10485760,
+        "request_timeout": 30,
+        "allowed_commands": [
+            "python",
+            "pip",
+            "git",
+            "ls",
+            "dir",
+            "echo"
+        ],
+        "allowed_extensions": [
+            ".txt", ".md", ".log", ".csv", ".json", ".xml", ".yaml", ".yml",
+            ".py", ".js", ".html", ".css", ".php", ".java", ".cpp", ".c", ".h",
+            ".ts", ".jsx", ".tsx", ".vue", ".svelte", ".env", ".ini", ".conf", ".config",
+            ".docx", ".xlsx", ".pptx", ".pdf", ".jpg", ".jpeg", ".png", ".gif", ".svg", ".ico",
+            ".zip", ".rar", ".7z", ".tar", ".gz"
+        ],
+        "allowed_dirs": [
+            ".", "~", "~/Desktop", "~/Documents", "~/Downloads", "C:\\", "~/Desktop/ai"
+        ]
+    }
+} 

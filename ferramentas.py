@@ -1,467 +1,302 @@
 """
-Módulo de ferramentas do Agente IA
-Contém todas as ferramentas disponíveis para o agente, com melhorias de segurança e performance
+Ferramentas do Agente IA
 """
 
 import os
 import subprocess
-import pyautogui
-import time
+from typing import List, Dict, Any, Optional
+from pathlib import Path
 import requests
-import shutil
-from bs4 import BeautifulSoup
-from urllib.parse import unquote, parse_qs
-from langchain_core.tools import tool
-from functools import lru_cache
-import logging
-import math
-from typing import Optional, List, Dict, Any
-import json
-from datetime import datetime
-import config
-from docx import Document
-import openpyxl
-from pptx import Presentation
+from langchain.tools import BaseTool
+from langchain.tools.base import ToolException
+
+from agenteia.core.config import CONFIG
+from agenteia.core.exceptions import (
+    SecurityError,
+    FileError,
+    WebError,
+    CommandError,
+    ValidationError
+)
 
 # Configurações de segurança
-MAX_FILE_SIZE = config.MAX_FILE_SIZE
-ALLOWED_COMMANDS = config.ALLOWED_COMMANDS
-ALLOWED_FILE_EXTENSIONS = config.ALLOWED_FILE_EXTENSIONS
-REQUEST_TIMEOUT = config.REQUEST_TIMEOUT
+MAX_FILE_SIZE = CONFIG["security"].max_file_size
+ALLOWED_COMMANDS = CONFIG["security"].allowed_commands
+ALLOWED_EXTENSIONS = CONFIG["security"].allowed_extensions
+ALLOWED_DIRS = CONFIG["security"].allowed_dirs
+REQUEST_TIMEOUT = CONFIG["security"].request_timeout
 
-class SecurityError(Exception):
-    """Exceção para erros de segurança."""
-    pass
-
-def validar_caminho(caminho: str) -> bool:
-    # Para acesso total, descomente a linha abaixo:
-    # return True
-    # Para acesso restrito, use a lista de diretórios permitidos:
-    caminho_absoluto = os.path.abspath(caminho)
-    return any(caminho_absoluto.startswith(os.path.abspath(d)) for d in config.ALLOWED_DIRS)
-
-def validar_tamanho_arquivo(caminho: str) -> bool:
-    """Valida se o tamanho do arquivo está dentro do limite permitido."""
-    return os.path.getsize(caminho) <= MAX_FILE_SIZE
-
-def validar_extensao(caminho: str) -> bool:
-    """Valida se a extensão do arquivo é permitida."""
-    _, ext = os.path.splitext(caminho)
-    return ext.lower() in ALLOWED_FILE_EXTENSIONS
-
-def formatar_resposta(dados: Dict[str, Any]) -> str:
-    """Formata a resposta em JSON com indentação."""
-    return json.dumps(dados, ensure_ascii=False, indent=2)
-
-@tool
-def pesquisar_web(query: str) -> str:
+def validar_arquivo(caminho: str) -> None:
     """
-    Realiza uma pesquisa na web usando DuckDuckGo e retorna um resumo dos primeiros resultados.
-    Útil para encontrar informações atuais, fatos, ou quando o conhecimento interno do agente não é suficiente.
+    Valida um arquivo antes de operações.
+    
+    Args:
+        caminho: Caminho do arquivo
+        
+    Raises:
+        SecurityError: Se o arquivo não for válido
     """
     try:
-        logging.info(f"Pesquisando na web por: '{query}'")
-        url = f"https://html.duckduckgo.com/html/?q={query}"
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-        }
-        response = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT)
-        response.raise_for_status()
+        # Converter para Path
+        path = Path(caminho)
         
-        soup = BeautifulSoup(response.text, 'html.parser')
-        resultados = []
+        # Verificar extensão
+        if path.suffix.lower() not in ALLOWED_EXTENSIONS:
+            raise SecurityError(f"Extensão não permitida: {path.suffix}")
         
-        for result_div in soup.find_all('div', class_='web-result', limit=3):
-            title_tag = result_div.find('a', class_='result__a')
-            snippet_tag = result_div.find('a', class_='result__snippet')
+        # Verificar diretório
+        if not any(str(path.parent).startswith(d) for d in ALLOWED_DIRS):
+            raise SecurityError(f"Diretório não permitido: {path.parent}")
+        
+        # Verificar tamanho se arquivo existir
+        if path.exists() and path.stat().st_size > MAX_FILE_SIZE:
+            raise SecurityError(f"Arquivo muito grande: {path}")
             
-            if title_tag and snippet_tag:
-                title = title_tag.get_text(strip=True)
-                snippet = snippet_tag.get_text(strip=True)
-                raw_link = title_tag['href']
-                link = raw_link
-                
-                if "duckduckgo.com/l/" in raw_link and "uddg=" in raw_link:
-                    try:
-                        params_str = raw_link.split('uddg=', 1)[1]
-                        parsed_link_params = parse_qs(params_str)
-                        if 'uddg' in parsed_link_params and parsed_link_params['uddg']:
-                            link = unquote(parsed_link_params['uddg'][0])
-                    except Exception as parse_e:
-                        logging.warning(f"Erro ao parsear link do DuckDuckGo '{raw_link}': {parse_e}")
-
-                resultados.append({
-                    'titulo': title,
-                    'snippet': snippet,
-                    'link': link
-                })
-
-        if not resultados:
-            return f"Nenhum resultado encontrado na web para '{query}'."
-
-        return formatar_resposta({
-            'query': query,
-            'resultados': resultados,
-            'total': len(resultados)
-        })
-
-    except requests.exceptions.Timeout:
-        return f"Erro ao pesquisar na web: Timeout após {REQUEST_TIMEOUT} segundos."
     except Exception as e:
-        logging.exception(f"Erro inesperado ao processar pesquisa web para '{query}'")
-        return formatar_resposta({"erro": str(e), "tipo": type(e).__name__})
+        if not isinstance(e, SecurityError):
+            raise SecurityError(f"Erro ao validar arquivo: {e}")
+        raise
 
-@tool
-def listar_arquivos(diretorio: str) -> str:
-    """Lista os arquivos e diretórios contidos em um dado diretorio."""
-    if not validar_caminho(diretorio):
-        raise SecurityError(f"Acesso negado ao diretório: {diretorio}")
-        
-    try:
-        conteudo = os.listdir(diretorio)
-        if not conteudo:
-            return f"O diretório '{diretorio}' está vazio."
-            
-        # Separar arquivos e diretórios
-        arquivos = []
-        diretorios = []
-        
-        for item in conteudo:
-            caminho_completo = os.path.join(diretorio, item)
-            if os.path.isfile(caminho_completo):
-                arquivos.append(item)
-            else:
-                diretorios.append(item)
-                
-        return formatar_resposta({
-            'diretorio': diretorio,
-            'arquivos': sorted(arquivos),
-            'diretorios': sorted(diretorios),
-            'total_arquivos': len(arquivos),
-            'total_diretorios': len(diretorios)
-        })
-        
-    except Exception as e:
-        logging.exception(f"Erro ao listar o diretório '{diretorio}'")
-        return formatar_resposta({"erro": str(e), "tipo": type(e).__name__})
-
-@tool
-def ler_arquivo(caminho_arquivo: str) -> str:
-    """Lê o conteúdo de um arquivo de texto especificado pelo caminho."""
-    if not validar_caminho(caminho_arquivo):
-        raise SecurityError(f"Acesso negado ao arquivo: {caminho_arquivo}")
-        
-    if not validar_extensao(caminho_arquivo):
-        raise SecurityError(f"Extensão de arquivo não permitida: {caminho_arquivo}")
-        
-    if not validar_tamanho_arquivo(caminho_arquivo):
-        raise SecurityError(f"Arquivo muito grande: {caminho_arquivo}")
-        
-    try:
-        with open(caminho_arquivo, 'r', encoding='utf-8') as f:
-            conteudo = f.read()
-            
-        return formatar_resposta({
-            'arquivo': caminho_arquivo,
-            'tamanho': len(conteudo),
-            'conteudo': conteudo
-        })
-        
-    except Exception as e:
-        logging.exception(f"Erro ao ler o arquivo '{caminho_arquivo}'")
-        return formatar_resposta({"erro": str(e), "tipo": type(e).__name__})
-
-@tool
-def escrever_arquivo(caminho_arquivo: str, conteudo: str) -> str:
-    """Escreve o conteudo especificado em um arquivo. Sobrescreve se existir."""
-    if not validar_caminho(caminho_arquivo):
-        raise SecurityError(f"Acesso negado ao arquivo: {caminho_arquivo}")
-        
-    if not validar_extensao(caminho_arquivo):
-        raise SecurityError(f"Extensão de arquivo não permitida: {caminho_arquivo}")
-        
-    if len(conteudo.encode('utf-8')) > MAX_FILE_SIZE:
-        raise SecurityError(f"Conteúdo muito grande para escrever no arquivo")
-        
-    try:
-        diretorio = os.path.dirname(caminho_arquivo)
-        if diretorio and not os.path.exists(diretorio):
-            os.makedirs(diretorio, exist_ok=True)
-
-        with open(caminho_arquivo, 'w', encoding='utf-8') as f:
-            f.write(conteudo)
-            
-        return formatar_resposta({
-            'arquivo': caminho_arquivo,
-            'tamanho': len(conteudo),
-            'status': 'escrito com sucesso'
-        })
-        
-    except Exception as e:
-        logging.exception(f"Erro ao escrever no arquivo '{caminho_arquivo}'")
-        return formatar_resposta({"erro": str(e), "tipo": type(e).__name__})
-
-@tool
-def executar_comando(comando: str) -> str:
-    """EXECUTA um comando shell. Retorna stdout e stderr. EXTREMA CAUTELA!"""
-    if not any(cmd in comando for cmd in ALLOWED_COMMANDS):
-        raise SecurityError(f"Comando não permitido: {comando}")
-        
-    try:
-        result = subprocess.run(
-            comando,
-            shell=True,
-            check=True,
-            capture_output=True,
-            text=True,
-            encoding='utf-8',
-            errors='replace',
-            timeout=REQUEST_TIMEOUT
-        )
-        
-        return formatar_resposta({
-            'comando': comando,
-            'stdout': result.stdout.strip(),
-            'stderr': result.stderr.strip(),
-            'returncode': result.returncode
-        })
-        
-    except subprocess.TimeoutExpired:
-        return f"Erro: Comando excedeu o timeout de {REQUEST_TIMEOUT} segundos"
-    except Exception as e:
-        logging.exception(f"Erro ao executar comando '{comando}'")
-        return formatar_resposta({
-            "erro": str(e),
-            "tipo": type(e).__name__
-        })
-
-@tool
-def calcular(expressao: str) -> str:
+def validar_comando(comando: str) -> None:
     """
-    Calcula o resultado de uma expressão matemática simples.
-    Suporta operações básicas e funções matemáticas comuns.
+    Valida um comando antes de executar.
+    
+    Args:
+        comando: Comando a ser executado
+        
+    Raises:
+        SecurityError: Se o comando não for permitido
     """
     try:
-        # Dicionário seguro de funções matemáticas
-        safe_dict = {
-            'sqrt': math.sqrt,
-            'pow': math.pow,
-            'sin': math.sin,
-            'cos': math.cos,
-            'tan': math.tan,
-            'radians': math.radians,
-            'degrees': math.degrees,
-            'log': math.log,
-            'log10': math.log10,
-            'exp': math.exp,
-            'pi': math.pi,
-            'e': math.e
-        }
+        # Extrair primeiro comando
+        cmd = comando.split()[0].lower()
         
-        resultado = eval(expressao, {"__builtins__": None}, safe_dict)
-        
-        return formatar_resposta({
-            'expressao': expressao,
-            'resultado': resultado,
-            'tipo': type(resultado).__name__
-        })
-        
+        # Verificar se é permitido
+        if cmd not in ALLOWED_COMMANDS:
+            raise SecurityError(f"Comando não permitido: {cmd}")
+            
     except Exception as e:
-        logging.exception(f"Erro ao calcular expressão '{expressao}'")
-        return formatar_resposta({"erro": str(e), "tipo": type(e).__name__})
+        if not isinstance(e, SecurityError):
+            raise SecurityError(f"Erro ao validar comando: {e}")
+        raise
 
-@tool
-def criar_word(caminho_arquivo: str, texto: str) -> str:
-    """Cria um arquivo Word (.docx) com o texto fornecido."""
-    try:
-        doc = Document()
-        doc.add_paragraph(texto)
-        doc.save(caminho_arquivo)
-        return formatar_resposta({"arquivo": caminho_arquivo, "status": "criado com sucesso"})
-    except Exception as e:
-        return formatar_resposta({"erro": str(e), "tipo": type(e).__name__})
-
-@tool
-def ler_word(caminho_arquivo: str) -> str:
-    """Lê o texto de um arquivo Word (.docx)."""
-    try:
-        doc = Document(caminho_arquivo)
-        texto = "\n".join([p.text for p in doc.paragraphs])
-        return formatar_resposta({"arquivo": caminho_arquivo, "conteudo": texto})
-    except Exception as e:
-        return formatar_resposta({"erro": str(e), "tipo": type(e).__name__})
-
-@tool
-def criar_excel(caminho_arquivo: str, dados: list) -> str:
-    """Cria um arquivo Excel (.xlsx) com os dados fornecidos (lista de listas)."""
-    try:
-        wb = openpyxl.Workbook()
-        ws = wb.active
-        for linha in dados:
-            ws.append(linha)
-        wb.save(caminho_arquivo)
-        return formatar_resposta({"arquivo": caminho_arquivo, "status": "criado com sucesso"})
-    except Exception as e:
-        return formatar_resposta({"erro": str(e), "tipo": type(e).__name__})
-
-@tool
-def ler_excel(caminho_arquivo: str) -> str:
-    """Lê o conteúdo de um arquivo Excel (.xlsx)."""
-    try:
-        wb = openpyxl.load_workbook(caminho_arquivo)
-        ws = wb.active
-        dados = [[cell.value for cell in row] for row in ws.iter_rows()]
-        return formatar_resposta({"arquivo": caminho_arquivo, "conteudo": dados})
-    except Exception as e:
-        return formatar_resposta({"erro": str(e), "tipo": type(e).__name__})
-
-@tool
-def criar_ppt(caminho_arquivo: str, titulos: list, textos: list) -> str:
-    """Cria um arquivo PowerPoint (.pptx) com slides de títulos e textos."""
-    try:
-        prs = Presentation()
-        for titulo, texto in zip(titulos, textos):
-            slide = prs.slides.add_slide(prs.slide_layouts[1])
-            slide.shapes.title.text = titulo
-            slide.placeholders[1].text = texto
-        prs.save(caminho_arquivo)
-        return formatar_resposta({"arquivo": caminho_arquivo, "status": "criado com sucesso"})
-    except Exception as e:
-        return formatar_resposta({"erro": str(e), "tipo": type(e).__name__})
-
-@tool
-def ler_ppt(caminho_arquivo: str) -> str:
-    """Lê os títulos e textos dos slides de um arquivo PowerPoint (.pptx)."""
-    try:
-        prs = Presentation(caminho_arquivo)
-        slides = []
-        for slide in prs.slides:
-            titulo = slide.shapes.title.text if slide.shapes.title else ""
-            texto = ""
-            for shape in slide.shapes:
-                if hasattr(shape, "text") and shape != slide.shapes.title:
-                    texto += shape.text + "\n"
-            slides.append({"titulo": titulo, "texto": texto.strip()})
-        return formatar_resposta({"arquivo": caminho_arquivo, "slides": slides})
-    except Exception as e:
-        return formatar_resposta({"erro": str(e), "tipo": type(e).__name__})
-
-@tool
-def criar_arquivo_codigo(caminho_arquivo: str, codigo: str) -> str:
-    """Cria um arquivo de código (ex: .py, .js, .html, etc) com o conteúdo fornecido."""
-    try:
-        diretorio = os.path.dirname(caminho_arquivo)
-        if diretorio and not os.path.exists(diretorio):
-            os.makedirs(diretorio, exist_ok=True)
-        with open(caminho_arquivo, 'w', encoding='utf-8') as f:
-            f.write(codigo)
-        return formatar_resposta({"arquivo": caminho_arquivo, "status": "criado com sucesso"})
-    except Exception as e:
-        return formatar_resposta({"erro": str(e), "tipo": type(e).__name__})
-
-@tool
-def criar_estrutura_pastas(base_dir: str, estrutura: dict) -> str:
-    """
-    Cria uma estrutura de pastas e arquivos a partir de um dicionário.
-    Exemplo de estrutura:
-    {
-        "src": {
-            "main.py": "print('Hello')",
-            "utils": {
-                "helpers.py": "# helpers"
+class PesquisarWeb(BaseTool):
+    """Ferramenta para pesquisar na web."""
+    
+    name = "pesquisar_web"
+    description = "Pesquisa informações na web usando DuckDuckGo"
+    
+    def _run(self, query: str) -> str:
+        try:
+            # Fazer requisição
+            url = "https://api.duckduckgo.com/"
+            params = {
+                "q": query,
+                "format": "json",
+                "no_html": 1,
+                "skip_disambig": 1
             }
-        },
-        "README.md": "# Projeto"
-    }
+            
+            response = requests.get(
+                url,
+                params=params,
+                timeout=REQUEST_TIMEOUT
+            )
+            response.raise_for_status()
+            
+            # Processar resposta
+            data = response.json()
+            
+            if "Abstract" in data and data["Abstract"]:
+                return data["Abstract"]
+            elif "RelatedTopics" in data and data["RelatedTopics"]:
+                return data["RelatedTopics"][0]["Text"]
+            else:
+                return "Nenhum resultado encontrado."
+                
+        except Exception as e:
+            raise WebError(f"Erro na pesquisa web: {e}")
+
+def criar_diretorio_projetos() -> Path:
+    """
+    Cria e retorna o diretório padrão para projetos.
     """
     try:
-        def criar_recursivo(base, tree):
-            for nome, conteudo in tree.items():
-                caminho = os.path.join(base, nome)
-                if isinstance(conteudo, dict):
-                    os.makedirs(caminho, exist_ok=True)
-                    criar_recursivo(caminho, conteudo)
-                else:
-                    with open(caminho, 'w', encoding='utf-8') as f:
-                        f.write(conteudo)
-        criar_recursivo(base_dir, estrutura)
-        return formatar_resposta({"base_dir": base_dir, "status": "estrutura criada com sucesso"})
+        # Criar diretório na pasta do usuário
+        diretorio_projetos = Path.home() / "AgenteIA_Projetos"
+        diretorio_projetos.mkdir(exist_ok=True)
+        return diretorio_projetos
     except Exception as e:
-        return formatar_resposta({"erro": str(e), "tipo": type(e).__name__})
+        raise FileError(f"Erro ao criar diretório de projetos: {e}")
 
-@tool
-def enviar_email(destinatario: str, assunto: str, mensagem: str) -> str:
-    """Envia um e-mail para o destinatário especificado."""
-    try:
-        # Aqui você pode integrar com um serviço de e-mail como SMTP ou uma API
-        # Exemplo usando SMTP:
-        import smtplib
-        from email.mime.text import MIMEText
-        from email.mime.multipart import MIMEMultipart
+class ListarUnidades(BaseTool):
+    """Ferramenta para listar unidades de disco disponíveis."""
+    
+    name = "listar_unidades"
+    description = "Lista todas as unidades de disco disponíveis e suas informações"
+    
+    def _run(self) -> str:
+        try:
+            import win32api
+            import win32file
+            
+            drives = win32api.GetLogicalDriveStrings().split('\000')[:-1]
+            unidades_info = []
+            
+            for drive in drives:
+                try:
+                    # Obter informações da unidade
+                    tipo = win32file.GetDriveType(drive)
+                    tipo_str = {
+                        0: "Desconhecido",
+                        1: "Inexistente",
+                        2: "Removível",
+                        3: "Fixo",
+                        4: "Rede",
+                        5: "CD-ROM",
+                        6: "RAM Disk"
+                    }.get(tipo, "Desconhecido")
+                    
+                    # Verificar espaço disponível
+                    try:
+                        free_bytes = win32file.GetDiskFreeSpace(drive)
+                        free_gb = (free_bytes[0] * free_bytes[1] * free_bytes[2]) / (1024**3)
+                        espaco = f"{free_gb:.2f} GB livre"
+                    except:
+                        espaco = "Espaço não disponível"
+                    
+                    # Adicionar informações da unidade
+                    unidades_info.append(f"📁 {drive} ({tipo_str}) - {espaco}")
+                except:
+                    continue
+            
+            # Adicionar informação do diretório de projetos
+            diretorio_projetos = criar_diretorio_projetos()
+            unidades_info.append(f"\n📁 Diretório de Projetos: {diretorio_projetos}")
+            
+            return "\n".join(unidades_info)
+            
+        except Exception as e:
+            raise FileError(f"Erro ao listar unidades: {e}")
 
-        # Configurações do servidor SMTP
-        smtp_server = "smtp.example.com"
-        smtp_port = 587
-        smtp_user = "seu_email@example.com"
-        smtp_password = "sua_senha"
+class ListarArquivos(BaseTool):
+    """Ferramenta para listar arquivos."""
+    
+    name = "listar_arquivos"
+    description = "Lista arquivos e diretórios em um caminho"
+    
+    def _run(self, diretorio: str = ".") -> str:
+        try:
+            # Validar diretório
+            path = Path(diretorio)
+            
+            # Verificar se é a pasta do Windows
+            if str(path).startswith('C:\\Windows'):
+                return "Acesso à pasta do Windows não é permitido."
+            
+            # Listar arquivos
+            if not path.exists():
+                return f"Diretório não encontrado: {diretorio}"
+                
+            arquivos = []
+            for item in path.iterdir():
+                if item.is_file():
+                    tamanho = item.stat().st_size / 1024  # Tamanho em KB
+                    arquivos.append(f"📄 {item.name} ({tamanho:.1f} KB)")
+                elif item.is_dir():
+                    arquivos.append(f"📁 {item.name}/")
+                    
+            if not arquivos:
+                return f"Nenhum arquivo encontrado em {diretorio}"
+                
+            return "\n".join(sorted(arquivos))
+            
+        except Exception as e:
+            raise FileError(f"Erro ao listar arquivos: {e}")
 
-        # Criar mensagem
-        msg = MIMEMultipart()
-        msg['From'] = smtp_user
-        msg['To'] = destinatario
-        msg['Subject'] = assunto
-        msg.attach(MIMEText(mensagem, 'plain'))
+class LerArquivo(BaseTool):
+    """Ferramenta para ler arquivos."""
+    
+    name = "ler_arquivo"
+    description = "Lê o conteúdo de um arquivo"
+    
+    def _run(self, caminho: str) -> str:
+        try:
+            # Validar arquivo
+            validar_arquivo(caminho)
+            
+            # Ler arquivo
+            path = Path(caminho)
+            if not path.exists():
+                return f"Arquivo não encontrado: {caminho}"
+                
+            with open(path, "r", encoding="utf-8") as f:
+                conteudo = f.read()
+                
+            return conteudo
+            
+        except Exception as e:
+            raise FileError(f"Erro ao ler arquivo: {e}")
 
-        # Enviar e-mail
-        with smtplib.SMTP(smtp_server, smtp_port) as server:
-            server.starttls()
-            server.login(smtp_user, smtp_password)
-            server.send_message(msg)
+class EscreverArquivo(BaseTool):
+    """Ferramenta para escrever em arquivos."""
+    
+    name = "escrever_arquivo"
+    description = "Escreve conteúdo em um arquivo"
+    
+    def _run(self, caminho: str, conteudo: str) -> str:
+        try:
+            # Validar arquivo
+            validar_arquivo(caminho)
+            
+            # Escrever arquivo
+            path = Path(caminho)
+            path.parent.mkdir(parents=True, exist_ok=True)
+            
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(conteudo)
+                
+            return f"Arquivo salvo: {caminho}"
+            
+        except Exception as e:
+            raise FileError(f"Erro ao escrever arquivo: {e}")
 
-        return formatar_resposta({"status": "E-mail enviado com sucesso"})
-    except Exception as e:
-        return formatar_resposta({"erro": str(e), "tipo": type(e).__name__})
+class ExecutarComando(BaseTool):
+    """Ferramenta para executar comandos."""
+    
+    name = "executar_comando"
+    description = "Executa um comando no terminal"
+    
+    def _run(self, comando: str) -> str:
+        try:
+            # Validar comando
+            validar_comando(comando)
+            
+            # Executar comando
+            process = subprocess.run(
+                comando,
+                shell=True,
+                capture_output=True,
+                text=True,
+                timeout=REQUEST_TIMEOUT
+            )
+            
+            if process.returncode == 0:
+                return process.stdout or "Comando executado com sucesso."
+            else:
+                raise CommandError(f"Erro ao executar comando: {process.stderr}")
+                
+        except subprocess.TimeoutExpired:
+            raise CommandError("Comando excedeu o tempo limite")
+        except Exception as e:
+            raise CommandError(f"Erro ao executar comando: {e}")
 
-@tool
-def enviar_whatsapp(numero: str, mensagem: str) -> str:
-    """Envia uma mensagem via WhatsApp para o número especificado."""
-    try:
-        # Aqui você pode integrar com uma API de WhatsApp como Twilio ou outra
-        # Exemplo usando Twilio:
-        from twilio.rest import Client
-
-        # Configurações do Twilio
-        account_sid = "AC7d476d8e5aad501b437f2de8c3c4bb13d"
-        auth_token = "AC7d476d8e5aad501b437f2de8c3c4bb13:944d02ad5b70d5f506fd9d43859184cc"
-        client = Client(account_sid, auth_token)
-
-        # Enviar mensagem
-        message = client.messages.create(
-            body=mensagem,
-            from_="whatsapp:+14155238886",  # Número do Twilio
-            to=f"whatsapp:{numero}"
-        )
-
-        return formatar_resposta({"status": "Mensagem enviada com sucesso"})
-    except Exception as e:
-        return formatar_resposta({"erro": str(e), "tipo": type(e).__name__})
-
-# Lista de todas as ferramentas disponíveis
+# Lista de ferramentas disponíveis
 ferramentas = [
-    pesquisar_web,
-    listar_arquivos,
-    ler_arquivo,
-    escrever_arquivo,
-    executar_comando,
-    calcular,
-    criar_word,
-    ler_word,
-    criar_excel,
-    ler_excel,
-    criar_ppt,
-    ler_ppt,
-    criar_arquivo_codigo,
-    criar_estrutura_pastas,
-    enviar_email,
-    enviar_whatsapp
+    PesquisarWeb(),
+    ListarArquivos(),
+    LerArquivo(),
+    EscreverArquivo(),
+    ExecutarComando(),
+    ListarUnidades()
 ] 

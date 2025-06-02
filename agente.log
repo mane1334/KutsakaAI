@@ -184,3 +184,1175 @@ texto
 2025-05-08 19:00:24,137 - httpx - INFO - HTTP Request: POST http://172.20.10.9:1234/v1/chat/completions "HTTP/1.1 200 OK"
 2025-05-08 19:06:31,615 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250508_190631.json'
 2025-05-08 19:06:31,616 - agente - INFO - Mensagem processada com sucesso: vamos antes definir o directorio que vamos trabalh...
+2025-05-08 19:13:22,233 - openai._base_client - INFO - Retrying request to /chat/completions in 0.376793 seconds
+2025-05-08 19:13:43,615 - openai._base_client - INFO - Retrying request to /chat/completions in 0.873619 seconds
+2025-05-08 19:14:05,498 - agente - ERROR - Erro ao processar mensagem: Request timed out.
+2025-05-08 19:14:56,150 - openai._base_client - INFO - Retrying request to /chat/completions in 0.378565 seconds
+2025-05-08 19:15:17,532 - openai._base_client - INFO - Retrying request to /chat/completions in 0.911894 seconds
+2025-05-08 19:15:39,448 - agente - ERROR - Erro ao processar mensagem: Request timed out.
+2025-05-08 19:17:14,496 - openai._base_client - INFO - Retrying request to /chat/completions in 0.423173 seconds
+2025-05-08 19:17:35,926 - openai._base_client - INFO - Retrying request to /chat/completions in 0.845435 seconds
+2025-05-08 19:17:57,779 - agente - ERROR - Erro ao processar mensagem: Request timed out.
+2025-05-08 19:18:57,303 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-08 19:19:30,538 - agente - INFO - Histórico carregado com sucesso de 'historico\historico_20250508_190631.json'
+2025-05-08 19:19:37,024 - agente - INFO - Histórico carregado com sucesso de 'historico\historico_20250508_185945.json'
+2025-05-08 19:20:02,288 - agente - INFO - Histórico carregado com sucesso de 'historico\historico_20250508_185945.json'
+2025-05-08 19:22:31,167 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-08 19:22:33,609 - agente - INFO - Histórico carregado com sucesso de 'historico\historico_20250508_190631.json'
+2025-05-08 19:23:30,420 - openai._base_client - INFO - Retrying request to /chat/completions in 0.443158 seconds
+2025-05-08 19:23:51,869 - openai._base_client - INFO - Retrying request to /chat/completions in 0.931364 seconds
+2025-05-08 19:24:13,805 - openai._base_client - INFO - Retrying request to /chat/completions in 1.678029 seconds
+2025-05-08 19:24:36,488 - agente - ERROR - Erro ao processar mensagem: Request timed out.
+2025-05-08 19:32:16,580 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-08 19:32:24,085 - httpx - INFO - HTTP Request: POST http://localhost:1234/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-05-08 19:32:24,093 - agente - ERROR - Erro ao processar mensagem: Error code: 404 - {'error': {'message': 'Model "local-model" not found. Please specify a valid model.\n\nYour models:\n\nqwen3-4b\nqwen2.5-coder-3b-instruct\nllama-3.2-1b-instruct\nqwen3-1.7b\nqwen3-0.6b\ngemma-3-4b-it-qat\ntext-embedding-nomic-embed-text-v1.5\nyolo-v3-ggml\ndeepseek-r1-distill-qwen-7b', 'type': 'invalid_request_error', 'param': 'model', 'code': 'model_not_found'}}
+2025-05-08 19:36:55,817 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-08 19:38:15,048 - openai._base_client - INFO - Retrying request to /chat/completions in 0.429877 seconds
+2025-05-08 19:38:36,481 - openai._base_client - INFO - Retrying request to /chat/completions in 0.826264 seconds
+2025-05-08 19:38:58,313 - openai._base_client - INFO - Retrying request to /chat/completions in 1.646302 seconds
+2025-05-08 19:39:20,974 - openai._base_client - INFO - Retrying request to /chat/completions in 3.571255 seconds
+2025-05-08 19:39:45,559 - openai._base_client - INFO - Retrying request to /chat/completions in 6.127609 seconds
+2025-05-08 19:40:12,703 - agente - ERROR - Erro ao processar mensagem: Request timed out.
+2025-05-08 19:53:53,624 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-08 19:56:42,288 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 19:59:42,291 - agente - ERROR - Erro ao processar mensagem: timed out
+2025-05-08 20:12:06,043 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 20:12:36,190 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250508_201236.json'
+2025-05-08 20:12:36,190 - agente - INFO - Mensagem processada com sucesso: oi...
+2025-05-08 20:14:11,726 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 20:18:50,625 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 20:23:18,602 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 20:26:24,785 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250508_202624.json'
+2025-05-08 20:26:24,785 - agente - INFO - Mensagem processada com sucesso: cria um site de vendas online de oculos e deixe na...
+2025-05-08 20:30:14,507 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 20:37:19,592 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 20:40:08,788 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250508_204008.json'
+2025-05-08 20:40:08,788 - agente - INFO - Mensagem processada com sucesso: ja criei a pasta podemos proseguir...
+2025-05-08 21:11:50,689 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 21:22:21,513 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250508_212221.json'
+2025-05-08 21:22:21,526 - agente - INFO - Mensagem processada com sucesso: vamos usar a alternativa 3...
+2025-05-08 21:27:10,587 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 21:38:23,757 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-05-08 21:38:23,769 - agente - ERROR - Erro ao processar mensagem: Error code: 404 - {'error': {'message': 'Failed to load model "qwen3-4b". Error: Operation canceled.', 'type': 'invalid_request_error', 'param': 'model', 'code': 'model_not_found'}}
+2025-05-12 19:32:22,903 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-12 19:36:51,961 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-12 19:39:28,851 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/chat/completions "HTTP/1.1 200 OK"
+2025-05-12 19:39:28,858 - agente - ERROR - Erro ao processar mensagem: No generation chunks were returned
+2025-05-12 19:48:42,446 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/chat/completions "HTTP/1.1 200 OK"
+2025-05-12 19:48:42,448 - agente - ERROR - Erro ao processar mensagem: No generation chunks were returned
+2025-05-12 19:50:59,893 - agente - INFO - Criando prompt template...
+2025-05-12 19:50:59,894 - agente - INFO - Template testado com sucesso
+2025-05-12 19:50:59,894 - agente - INFO - Prompt template criado com sucesso
+2025-05-12 19:50:59,895 - agente - INFO - Inicializando LLM geral...
+2025-05-12 19:51:01,178 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-12 19:51:01,178 - agente - INFO - Inicializando LLM coder...
+2025-05-12 19:51:02,196 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-12 19:51:02,196 - agente - INFO - Criando agentes...
+2025-05-12 19:51:02,276 - agente - INFO - Agentes criados com sucesso
+2025-05-12 19:51:02,276 - agente - INFO - Criando executores...
+2025-05-12 19:51:02,277 - agente - INFO - Executores criados com sucesso
+2025-05-12 19:51:02,279 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-12 19:51:14,439 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/chat/completions "HTTP/1.1 200 OK"
+2025-05-12 19:51:14,442 - agente - ERROR - Erro ao processar mensagem: No generation chunks were returned
+2025-05-12 19:55:40,854 - agente - INFO - Criando prompt template...
+2025-05-12 19:55:40,854 - agente - INFO - Prompt template criado com sucesso
+2025-05-12 19:55:40,855 - agente - INFO - Inicializando LLM geral...
+2025-05-12 19:55:41,905 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-12 19:55:41,905 - agente - INFO - Inicializando LLM coder...
+2025-05-12 19:55:42,838 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-12 19:55:42,838 - agente - INFO - Criando agentes...
+2025-05-12 19:55:42,937 - agente - INFO - Agentes criados com sucesso
+2025-05-12 19:55:42,937 - agente - INFO - Criando executores...
+2025-05-12 19:55:42,938 - agente - INFO - Executores criados com sucesso
+2025-05-12 19:55:42,939 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-12 19:55:46,415 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/chat/completions "HTTP/1.1 200 OK"
+2025-05-12 19:55:46,416 - agente - ERROR - Erro ao processar mensagem: No generation chunks were returned
+2025-05-12 19:57:47,971 - agente - INFO - Criando prompt template...
+2025-05-12 19:57:47,972 - agente - INFO - Prompt template criado com sucesso
+2025-05-12 19:57:47,972 - agente - INFO - Inicializando LLM geral...
+2025-05-12 19:57:49,173 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-12 19:57:49,173 - agente - INFO - Inicializando LLM coder...
+2025-05-12 19:57:50,145 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-12 19:57:50,145 - agente - INFO - Criando agentes...
+2025-05-12 19:57:50,237 - agente - INFO - Agentes criados com sucesso
+2025-05-12 19:57:50,237 - agente - INFO - Criando executores...
+2025-05-12 19:57:50,238 - agente - INFO - Executores criados com sucesso
+2025-05-12 19:57:50,238 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-12 19:58:16,852 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/chat/completions "HTTP/1.1 200 OK"
+2025-05-12 19:58:16,854 - agente - ERROR - Erro ao processar mensagem: No generation chunks were returned
+2025-05-12 19:59:43,717 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/chat/completions "HTTP/1.1 200 OK"
+2025-05-12 19:59:43,718 - agente - ERROR - Erro ao processar mensagem: No generation chunks were returned
+2025-05-12 20:00:11,668 - agente - INFO - Criando prompt template...
+2025-05-12 20:00:11,669 - agente - INFO - Prompt template criado com sucesso
+2025-05-12 20:00:11,670 - agente - INFO - Inicializando LLM geral...
+2025-05-12 20:00:12,743 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-12 20:00:12,743 - agente - INFO - Inicializando LLM coder...
+2025-05-12 20:00:13,660 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-12 20:00:13,660 - agente - INFO - Criando agentes...
+2025-05-12 20:00:13,737 - agente - INFO - Agentes criados com sucesso
+2025-05-12 20:00:13,737 - agente - INFO - Criando executores...
+2025-05-12 20:00:13,738 - agente - INFO - Executores criados com sucesso
+2025-05-12 20:00:13,738 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-12 20:00:37,158 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-05-12 20:00:37,166 - agente - ERROR - Erro ao processar mensagem: Error code: 404 - {'error': {'message': 'Failed to load model "qwen3-4b". Error: Failed to load model', 'type': 'invalid_request_error', 'param': 'model', 'code': 'model_not_found'}}
+2025-05-12 20:01:51,074 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-12 20:04:51,076 - agente - ERROR - Erro ao processar mensagem: timed out
+2025-05-12 20:09:12,049 - agente - INFO - Criando prompt template...
+2025-05-12 20:09:12,050 - agente - INFO - Prompt template criado com sucesso
+2025-05-12 20:09:12,051 - agente - INFO - Inicializando LLM geral com modelo: qwen3-4b
+2025-05-12 20:09:13,174 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-12 20:09:13,174 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-12 20:09:14,098 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-12 20:09:14,098 - agente - INFO - Criando agentes...
+2025-05-12 20:09:14,176 - agente - INFO - Agentes criados com sucesso
+2025-05-12 20:09:14,177 - agente - INFO - Criando executores...
+2025-05-12 20:09:14,178 - agente - INFO - Executores criados com sucesso
+2025-05-12 20:09:14,178 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-12 20:11:03,040 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-12 20:11:24,893 - agente - ERROR - Erro ao processar mensagem: One input key expected got ['agent_scratchpad', 'input']
+2025-05-12 20:12:07,472 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-12 20:14:01,558 - agente - ERROR - Erro ao processar mensagem: One input key expected got ['agent_scratchpad', 'input']
+2025-05-12 22:26:46,093 - agente - INFO - Criando prompt template...
+2025-05-12 22:26:46,094 - agente - INFO - Prompt template criado com sucesso
+2025-05-12 22:26:46,095 - agente - INFO - Inicializando LLM geral com modelo: qwen3-4b
+2025-05-12 22:26:48,110 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-12 22:26:48,111 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-12 22:26:49,302 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-12 22:26:49,303 - agente - INFO - Criando agentes...
+2025-05-12 22:26:49,401 - agente - INFO - Agentes criados com sucesso
+2025-05-12 22:26:49,402 - agente - INFO - Criando executores...
+2025-05-12 22:26:49,403 - agente - INFO - Executores criados com sucesso
+2025-05-12 22:26:49,403 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-12 22:31:14,310 - openai._base_client - INFO - Retrying request to /chat/completions in 0.393127 seconds
+2025-05-12 22:31:16,709 - openai._base_client - INFO - Retrying request to /chat/completions in 0.832230 seconds
+2025-05-12 22:31:19,555 - openai._base_client - INFO - Retrying request to /chat/completions in 1.674658 seconds
+2025-05-12 22:31:23,235 - openai._base_client - INFO - Retrying request to /chat/completions in 3.947504 seconds
+2025-05-12 22:31:29,198 - openai._base_client - INFO - Retrying request to /chat/completions in 7.311549 seconds
+2025-05-12 22:31:38,526 - agente - ERROR - Erro ao processar mensagem: Connection error.
+2025-05-12 22:33:52,178 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-12 22:33:52,178 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-12 22:33:52,218 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-12 22:33:56,702 - werkzeug - WARNING -  * Debugger is active!
+2025-05-12 22:33:56,719 - werkzeug - INFO -  * Debugger PIN: 855-069-944
+2025-05-12 22:36:42,412 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\.venv\\Lib\\site-packages\\jinja2\\__init__.py', reloading
+2025-05-12 22:36:42,424 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\.venv\\Lib\\site-packages\\jinja2\\environment.py', reloading
+2025-05-12 22:36:43,041 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-12 22:36:47,770 - werkzeug - WARNING -  * Debugger is active!
+2025-05-12 22:36:47,781 - werkzeug - INFO -  * Debugger PIN: 855-069-944
+2025-05-12 22:38:43,007 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\web_interface.py', reloading
+2025-05-12 22:38:43,013 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\web_interface.py', reloading
+2025-05-12 22:38:43,014 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\web_interface.py', reloading
+2025-05-12 22:38:43,543 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-12 22:38:51,475 - werkzeug - WARNING -  * Debugger is active!
+2025-05-12 22:38:51,498 - werkzeug - INFO -  * Debugger PIN: 855-069-944
+2025-05-12 22:39:54,684 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\web_interface.py', reloading
+2025-05-12 22:39:54,695 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\web_interface.py', reloading
+2025-05-12 22:39:55,727 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-12 22:40:04,899 - werkzeug - WARNING -  * Debugger is active!
+2025-05-12 22:40:04,919 - werkzeug - INFO -  * Debugger PIN: 855-069-944
+2025-05-12 22:41:59,663 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\\Lib\\_pydatetime.py', reloading
+2025-05-12 22:41:59,835 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\.venv\\Lib\\site-packages\\langchain_core\\messages\\human.py', reloading
+2025-05-12 22:41:59,845 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\.venv\\Lib\\site-packages\\langchain_core\\messages\\ai.py', reloading
+2025-05-12 22:41:59,869 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\.venv\\Lib\\site-packages\\langchain_openai\\__init__.py', reloading
+2025-05-12 22:41:59,885 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\.venv\\Lib\\site-packages\\langchain_openai\\chat_models\\__init__.py', reloading
+2025-05-12 22:41:59,894 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\.venv\\Lib\\site-packages\\langchain_openai\\chat_models\\base.py', reloading
+2025-05-12 22:42:00,044 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\.venv\\Lib\\site-packages\\langchain_core\\language_models\\chat_models.py', reloading
+2025-05-12 22:42:00,122 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\.venv\\Lib\\site-packages\\langchain_core\\language_models\\base.py', reloading
+2025-05-12 22:42:00,146 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\.venv\\Lib\\site-packages\\langchain_core\\runnables\\__init__.py', reloading
+2025-05-12 22:42:00,165 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\.venv\\Lib\\site-packages\\langchain_core\\runnables\\base.py', reloading
+2025-05-12 22:42:00,295 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\.venv\\Lib\\site-packages\\langchain_core\\runnables\\utils.py', reloading
+2025-05-12 22:42:00,319 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\.venv\\Lib\\site-packages\\langchain_core\\prompt_values.py', reloading
+2025-05-12 22:42:00,329 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\.venv\\Lib\\site-packages\\langchain_core\\messages\\utils.py', reloading
+2025-05-12 22:42:00,408 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\.venv\\Lib\\site-packages\\certifi\\__init__.py', reloading
+2025-05-12 22:42:00,419 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\.venv\\Lib\\site-packages\\certifi\\core.py', reloading
+2025-05-12 22:42:00,431 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\.venv\\Lib\\site-packages\\langchain_core\\prompts\\__init__.py', reloading
+2025-05-12 22:42:00,447 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\.venv\\Lib\\site-packages\\langchain_core\\prompts\\chat.py', reloading
+2025-05-12 22:42:00,469 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\.venv\\Lib\\site-packages\\langchain_core\\prompts\\base.py', reloading
+2025-05-12 22:42:00,487 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\.venv\\Lib\\site-packages\\langchain_core\\prompts\\message.py', reloading
+2025-05-12 22:42:00,497 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\.venv\\Lib\\site-packages\\langchain_core\\load\\__init__.py', reloading
+2025-05-12 22:42:00,515 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\.venv\\Lib\\site-packages\\langchain\\agents\\__init__.py', reloading
+2025-05-12 22:42:01,018 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-12 22:42:05,865 - werkzeug - WARNING -  * Debugger is active!
+2025-05-12 22:42:05,880 - werkzeug - INFO -  * Debugger PIN: 855-069-944
+2025-05-12 22:42:28,931 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\agente.py', reloading
+2025-05-12 22:42:28,935 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\agente.py', reloading
+2025-05-12 22:42:28,936 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\agente.py', reloading
+2025-05-12 22:42:30,278 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-12 22:42:35,461 - werkzeug - WARNING -  * Debugger is active!
+2025-05-12 22:42:35,472 - werkzeug - INFO -  * Debugger PIN: 855-069-944
+2025-05-12 22:42:49,508 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\web_interface.py', reloading
+2025-05-12 22:42:49,513 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\web_interface.py', reloading
+2025-05-12 22:42:49,513 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\web_interface.py', reloading
+2025-05-12 22:42:49,691 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\web_interface.py', reloading
+2025-05-12 22:42:49,696 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\web_interface.py', reloading
+2025-05-12 22:42:49,697 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\web_interface.py', reloading
+2025-05-12 22:42:50,536 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-12 22:42:54,848 - werkzeug - WARNING -  * Debugger is active!
+2025-05-12 22:42:54,860 - werkzeug - INFO -  * Debugger PIN: 855-069-944
+2025-05-12 22:47:53,518 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-12 22:47:53,518 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-12 22:47:53,531 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-12 22:47:57,503 - werkzeug - WARNING -  * Debugger is active!
+2025-05-12 22:47:57,515 - werkzeug - INFO -  * Debugger PIN: 855-069-944
+2025-05-12 22:48:29,603 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:48:29] "GET / HTTP/1.1" 200 -
+2025-05-12 22:48:30,837 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:48:30] "GET /historico HTTP/1.1" 200 -
+2025-05-12 22:48:30,887 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:48:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-12 22:48:35,837 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:48:35] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:48:40,837 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:48:40] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:48:45,837 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:48:45] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:48:50,837 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:48:50] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:48:55,093 - agente - INFO - Criando prompt template...
+2025-05-12 22:48:55,093 - agente - INFO - Prompt template criado com sucesso
+2025-05-12 22:48:55,094 - agente - INFO - Inicializando LLM geral com modelo: qwen3-4b
+2025-05-12 22:48:55,837 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:48:55] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:48:56,229 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-12 22:48:56,229 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-12 22:48:57,114 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-12 22:48:57,114 - agente - INFO - Criando agentes...
+2025-05-12 22:48:57,185 - agente - INFO - Agentes criados com sucesso
+2025-05-12 22:48:57,185 - agente - INFO - Criando executores...
+2025-05-12 22:48:57,186 - agente - INFO - Executores criados com sucesso
+2025-05-12 22:48:57,186 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-12 22:48:57,186 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:48:57] "POST /carregar_ia HTTP/1.1" 200 -
+2025-05-12 22:49:00,837 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:49:00] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:49:05,836 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:49:05] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:49:10,837 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:49:10] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:49:15,395 - agente - ERROR - Erro ao processar mensagem: could not convert string to float: ''
+2025-05-12 22:49:15,395 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:49:15] "POST /enviar_mensagem HTTP/1.1" 200 -
+2025-05-12 22:49:15,409 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:49:15] "GET /historico HTTP/1.1" 200 -
+2025-05-12 22:49:15,837 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:49:15] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:49:20,837 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:49:20] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:49:25,837 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:49:25] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:49:30,838 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:49:30] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:49:35,837 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:49:35] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:49:40,880 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:49:40] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:49:45,877 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:49:45] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:49:50,881 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:49:50] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:49:55,879 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:49:55] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:50:00,879 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:50:00] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:50:05,881 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:50:05] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:50:10,877 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:50:10] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:50:15,881 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:50:15] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:50:20,883 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:50:20] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:50:25,880 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:50:25] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:50:30,880 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:50:30] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:50:35,883 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:50:35] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:50:40,896 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:50:40] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:50:45,881 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:50:45] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:50:50,881 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:50:50] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:50:55,966 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:50:55] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:51:01,055 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:51:01] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:51:47,882 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:51:47] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:52:47,885 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:52:47] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:53:19,006 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:53:19] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:53:20,483 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:53:20] "GET / HTTP/1.1" 200 -
+2025-05-12 22:53:20,584 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:53:20] "GET /historico HTTP/1.1" 200 -
+2025-05-12 22:53:25,585 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:53:25] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:53:30,881 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:53:30] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:53:35,879 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:53:35] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:53:40,879 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:53:40] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:53:45,882 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:53:45] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:53:50,881 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:53:50] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:53:55,883 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:53:55] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:54:00,883 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:54:00] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:54:05,884 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:54:05] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:54:10,880 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:54:10] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:54:15,883 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:54:15] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:54:20,881 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:54:20] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:54:25,882 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:54:25] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:54:30,881 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:54:30] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:54:35,880 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:54:35] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:54:40,881 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:54:40] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:54:47,886 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:54:47] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:55:07,895 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:55:07] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:55:09,625 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:55:09] "GET / HTTP/1.1" 200 -
+2025-05-12 22:55:09,716 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:55:09] "GET /historico HTTP/1.1" 200 -
+2025-05-12 22:55:14,726 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:55:14] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:55:19,717 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:55:19] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:55:24,718 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:55:24] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:55:29,717 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:55:29] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:55:34,717 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:55:34] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:55:39,719 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:55:39] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:55:44,879 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:55:44] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:55:49,880 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:55:49] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:55:54,880 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:55:54] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:55:59,880 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:55:59] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:56:04,878 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:56:04] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:56:09,880 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:56:09] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:56:14,880 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:56:14] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:56:19,880 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:56:19] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:56:24,880 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:56:24] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:56:29,880 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:56:29] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:56:34,717 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:56:34] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:56:39,883 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:56:39] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:56:44,879 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:56:44] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:56:49,879 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:56:49] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:56:54,881 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:56:54] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:56:59,879 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:56:59] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:57:04,883 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:57:04] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:57:09,880 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:57:09] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:57:14,880 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:57:14] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:57:19,880 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:57:19] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:57:24,880 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:57:24] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:57:29,880 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:57:29] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:57:34,881 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:57:34] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:57:47,886 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:57:47] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:58:10,350 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:58:10] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:58:12,180 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:58:12] "GET / HTTP/1.1" 200 -
+2025-05-12 22:58:12,271 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:58:12] "GET /historico HTTP/1.1" 200 -
+2025-05-12 22:58:17,284 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:58:17] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:58:22,272 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:58:22] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:58:27,273 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:58:27] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:58:32,273 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:58:32] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:58:37,879 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:58:37] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:58:42,880 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:58:42] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:58:47,881 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:58:47] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:58:52,881 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:58:52] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:58:57,880 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:58:57] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:59:02,879 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:59:02] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:59:07,881 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:59:07] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:59:12,880 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:59:12] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:59:17,879 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:59:17] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:59:22,879 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:59:22] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:59:27,879 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:59:27] "GET /status HTTP/1.1" 200 -
+2025-05-12 22:59:47,881 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 22:59:47] "GET /status HTTP/1.1" 200 -
+2025-05-12 23:00:47,886 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 23:00:47] "GET /status HTTP/1.1" 200 -
+2025-05-12 23:01:47,883 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 23:01:47] "GET /status HTTP/1.1" 200 -
+2025-05-12 23:02:08,820 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 23:02:08] "GET /status HTTP/1.1" 200 -
+2025-05-12 23:02:10,897 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 23:02:10] "GET / HTTP/1.1" 200 -
+2025-05-12 23:03:23,731 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 23:03:23] "GET / HTTP/1.1" 200 -
+2025-05-12 23:04:03,947 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 23:04:03] "GET / HTTP/1.1" 200 -
+2025-05-12 23:04:14,077 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 23:04:14] "GET / HTTP/1.1" 200 -
+2025-05-12 23:10:57,713 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 23:10:57] "GET / HTTP/1.1" 200 -
+2025-05-12 23:27:26,509 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Sr.Africano\\Desktop\\ai\\interface.py', reloading
+2025-05-12 23:27:26,780 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-12 23:27:28,078 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-12 23:27:34,314 - werkzeug - WARNING -  * Debugger is active!
+2025-05-12 23:27:34,331 - werkzeug - INFO -  * Debugger PIN: 855-069-944
+2025-05-12 23:27:44,407 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 23:27:44] "GET / HTTP/1.1" 200 -
+2025-05-12 23:29:57,732 - agente - ERROR - Erro ao processar mensagem: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-05-14 15:40:24,387 - agente - INFO - Criando prompt template...
+2025-05-14 15:40:24,388 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 15:40:24,388 - agente - INFO - Inicializando LLM geral com modelo: qwen3-4b
+2025-05-14 15:40:25,976 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 15:40:25,977 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 15:40:26,926 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 15:40:26,926 - agente - INFO - Criando agentes...
+2025-05-14 15:40:27,014 - agente - INFO - Agentes criados com sucesso
+2025-05-14 15:40:27,014 - agente - INFO - Criando executores...
+2025-05-14 15:40:27,015 - agente - INFO - Executores criados com sucesso
+2025-05-14 15:40:27,015 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 15:41:33,459 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-14 15:44:33,466 - agente - ERROR - Erro ao processar mensagem: timed out
+2025-05-14 15:52:14,695 - agente - INFO - Criando prompt template...
+2025-05-14 15:52:14,696 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 15:52:14,698 - agente - INFO - Inicializando LLM geral com modelo: qwen3-4b
+2025-05-14 15:52:15,741 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 15:52:15,741 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 15:52:16,607 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 15:52:16,607 - agente - INFO - Criando agentes...
+2025-05-14 15:52:16,683 - agente - INFO - Agentes criados com sucesso
+2025-05-14 15:52:16,683 - agente - INFO - Criando executores...
+2025-05-14 15:52:16,685 - agente - INFO - Executores criados com sucesso
+2025-05-14 15:52:16,686 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 15:54:35,998 - agente - INFO - Criando prompt template...
+2025-05-14 15:54:35,999 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 15:54:35,999 - agente - INFO - Inicializando LLM geral com modelo: qwen3-0.6b
+2025-05-14 15:54:37,016 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 15:54:37,016 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 15:54:37,952 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 15:54:37,952 - agente - INFO - Criando agentes...
+2025-05-14 15:54:38,024 - agente - INFO - Agentes criados com sucesso
+2025-05-14 15:54:38,025 - agente - INFO - Criando executores...
+2025-05-14 15:54:38,025 - agente - INFO - Executores criados com sucesso
+2025-05-14 15:54:38,025 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 15:55:01,880 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-14 15:55:40,688 - agente - ERROR - Erro ao processar mensagem: One input key expected got ['input', 'agent_scratchpad']
+2025-05-14 16:00:31,551 - agente - INFO - Criando prompt template...
+2025-05-14 16:00:31,554 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 16:00:31,554 - agente - INFO - Inicializando LLM geral com modelo: qwen3-4b
+2025-05-14 16:00:32,804 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 16:00:32,804 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 16:00:33,847 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 16:00:33,847 - agente - INFO - Criando agentes...
+2025-05-14 16:00:39,364 - agente - INFO - Criando prompt template...
+2025-05-14 16:00:39,365 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 16:00:39,366 - agente - INFO - Inicializando LLM geral com modelo: qwen3-0.6b
+2025-05-14 16:00:40,303 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 16:00:40,303 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 16:00:41,228 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 16:00:41,228 - agente - INFO - Criando agentes...
+2025-05-14 16:03:43,892 - agente - INFO - Criando prompt template...
+2025-05-14 16:03:43,894 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 16:03:43,894 - agente - INFO - Inicializando LLM geral com modelo: qwen3-4b
+2025-05-14 16:03:44,866 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 16:03:44,866 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 16:03:45,921 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 16:03:45,922 - agente - INFO - Criando agentes...
+2025-05-14 16:03:46,007 - agente - INFO - Agentes criados com sucesso
+2025-05-14 16:03:46,007 - agente - INFO - Criando executores...
+2025-05-14 16:03:46,008 - agente - INFO - Executores criados com sucesso
+2025-05-14 16:03:46,008 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 16:03:51,233 - agente - INFO - Criando prompt template...
+2025-05-14 16:03:51,234 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 16:03:51,234 - agente - INFO - Inicializando LLM geral com modelo: qwen3-0.6b
+2025-05-14 16:03:52,261 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 16:03:52,263 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 16:03:53,196 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 16:03:53,196 - agente - INFO - Criando agentes...
+2025-05-14 16:03:53,274 - agente - INFO - Agentes criados com sucesso
+2025-05-14 16:03:53,275 - agente - INFO - Criando executores...
+2025-05-14 16:03:53,275 - agente - INFO - Executores criados com sucesso
+2025-05-14 16:03:53,275 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 16:03:54,395 - agente - ERROR - Erro ao processar mensagem: 'Input to ChatPromptTemplate is missing variables {\'"parametro1"\'}.  Expected: [\'"parametro1"\', \'agent_scratchpad\', \'chat_history\', \'input\'] Received: [\'input\', \'chat_history\', \'intermediate_steps\', \'agent_scratchpad\']\nNote: if you intended {"parametro1"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"parametro1"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+2025-05-14 16:05:28,616 - agente - ERROR - Erro ao processar mensagem: 'Input to ChatPromptTemplate is missing variables {\'"parametro1"\'}.  Expected: [\'"parametro1"\', \'agent_scratchpad\', \'chat_history\', \'input\'] Received: [\'input\', \'chat_history\', \'intermediate_steps\', \'agent_scratchpad\']\nNote: if you intended {"parametro1"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"parametro1"}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+2025-05-14 16:21:58,298 - agente - INFO - Criando prompt template...
+2025-05-14 16:21:58,300 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 16:21:58,300 - agente - INFO - Inicializando LLM geral com modelo: qwen3-4b
+2025-05-14 16:21:59,387 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 16:21:59,389 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 16:22:00,469 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 16:22:00,469 - agente - INFO - Criando agentes...
+2025-05-14 16:22:00,662 - agente - INFO - Agentes criados com sucesso
+2025-05-14 16:22:00,662 - agente - INFO - Criando executores...
+2025-05-14 16:22:00,664 - agente - INFO - Executores criados com sucesso
+2025-05-14 16:22:00,664 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 16:22:06,043 - agente - INFO - Criando prompt template...
+2025-05-14 16:22:06,044 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 16:22:06,045 - agente - INFO - Inicializando LLM geral com modelo: qwen3-0.6b
+2025-05-14 16:22:07,141 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 16:22:07,141 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 16:22:08,058 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 16:22:08,058 - agente - INFO - Criando agentes...
+2025-05-14 16:22:08,131 - agente - INFO - Agentes criados com sucesso
+2025-05-14 16:22:08,131 - agente - INFO - Criando executores...
+2025-05-14 16:22:08,131 - agente - INFO - Executores criados com sucesso
+2025-05-14 16:22:08,131 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 16:25:11,094 - agente - INFO - Criando prompt template...
+2025-05-14 16:25:11,095 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 16:25:11,096 - agente - INFO - Inicializando LLM geral com modelo: qwen3-4b
+2025-05-14 16:25:12,319 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 16:25:12,320 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 16:25:13,315 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 16:25:13,316 - agente - INFO - Criando agentes...
+2025-05-14 16:25:13,388 - agente - INFO - Agentes criados com sucesso
+2025-05-14 16:25:13,389 - agente - INFO - Criando executores...
+2025-05-14 16:25:13,390 - agente - INFO - Executores criados com sucesso
+2025-05-14 16:25:13,390 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 16:25:24,502 - agente - INFO - Criando prompt template...
+2025-05-14 16:25:24,503 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 16:25:24,504 - agente - INFO - Inicializando LLM geral com modelo: qwen3-0.6b
+2025-05-14 16:25:25,547 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 16:25:25,547 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 16:25:26,459 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 16:25:26,459 - agente - INFO - Criando agentes...
+2025-05-14 16:25:26,534 - agente - INFO - Agentes criados com sucesso
+2025-05-14 16:25:26,535 - agente - INFO - Criando executores...
+2025-05-14 16:25:26,536 - agente - INFO - Executores criados com sucesso
+2025-05-14 16:25:26,536 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 16:29:05,870 - agente - INFO - Criando prompt template...
+2025-05-14 16:29:05,870 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 16:29:05,872 - agente - INFO - Inicializando LLM geral com modelo: qwen3-4b
+2025-05-14 16:29:07,002 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 16:29:07,002 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 16:29:07,871 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 16:29:07,871 - agente - INFO - Criando agentes...
+2025-05-14 16:29:07,942 - agente - INFO - Agentes criados com sucesso
+2025-05-14 16:29:07,943 - agente - INFO - Criando executores...
+2025-05-14 16:29:07,946 - agente - INFO - Executores criados com sucesso
+2025-05-14 16:29:07,947 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 16:29:20,214 - agente - INFO - Criando prompt template...
+2025-05-14 16:29:20,215 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 16:29:20,216 - agente - INFO - Inicializando LLM geral com modelo: qwen3-0.6b
+2025-05-14 16:29:21,155 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 16:29:21,155 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 16:29:22,209 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 16:29:22,209 - agente - INFO - Criando agentes...
+2025-05-14 16:29:22,279 - agente - INFO - Agentes criados com sucesso
+2025-05-14 16:29:22,280 - agente - INFO - Criando executores...
+2025-05-14 16:29:22,280 - agente - INFO - Executores criados com sucesso
+2025-05-14 16:29:22,281 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 16:32:23,393 - agente - INFO - Criando prompt template...
+2025-05-14 16:32:23,393 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 16:32:23,394 - agente - INFO - Inicializando LLM geral com modelo: qwen3-4b
+2025-05-14 16:32:24,827 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 16:32:24,827 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 16:32:26,237 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 16:32:26,238 - agente - INFO - Criando agentes...
+2025-05-14 16:32:26,340 - agente - INFO - Agentes criados com sucesso
+2025-05-14 16:32:26,340 - agente - INFO - Criando executores...
+2025-05-14 16:32:26,341 - agente - INFO - Executores criados com sucesso
+2025-05-14 16:32:26,342 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 16:32:27,284 - agente - INFO - Criando prompt template...
+2025-05-14 16:32:27,285 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 16:32:27,286 - agente - INFO - Inicializando LLM geral com modelo: qwen3-0.6b
+2025-05-14 16:32:28,759 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 16:32:28,760 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 16:32:29,817 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 16:32:29,817 - agente - INFO - Criando agentes...
+2025-05-14 16:32:29,891 - agente - INFO - Agentes criados com sucesso
+2025-05-14 16:32:29,891 - agente - INFO - Criando executores...
+2025-05-14 16:32:29,891 - agente - INFO - Executores criados com sucesso
+2025-05-14 16:32:29,892 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 16:34:47,949 - agente - INFO - Criando prompt template...
+2025-05-14 16:34:47,949 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 16:34:47,950 - agente - INFO - Inicializando LLM geral com modelo: qwen3-4b
+2025-05-14 16:34:48,953 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 16:34:48,954 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 16:34:49,859 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 16:34:49,860 - agente - INFO - Criando agentes...
+2025-05-14 16:34:49,973 - agente - INFO - Agentes criados com sucesso
+2025-05-14 16:34:49,974 - agente - INFO - Criando executores...
+2025-05-14 16:34:49,975 - agente - INFO - Executores criados com sucesso
+2025-05-14 16:34:49,975 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 16:34:53,561 - agente - INFO - Criando prompt template...
+2025-05-14 16:34:53,561 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 16:34:53,562 - agente - INFO - Inicializando LLM geral com modelo: qwen3-0.6b
+2025-05-14 16:34:54,486 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 16:34:54,486 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 16:34:55,432 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 16:34:55,432 - agente - INFO - Criando agentes...
+2025-05-14 16:34:55,496 - agente - INFO - Agentes criados com sucesso
+2025-05-14 16:34:55,497 - agente - INFO - Criando executores...
+2025-05-14 16:34:55,497 - agente - INFO - Executores criados com sucesso
+2025-05-14 16:34:55,497 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 16:50:58,142 - agente - INFO - Criando prompt template...
+2025-05-14 16:50:58,143 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 16:50:58,143 - agente - INFO - Inicializando LLM geral com modelo: qwen3-4b
+2025-05-14 16:50:59,550 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 16:50:59,551 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 16:51:00,662 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 16:51:00,662 - agente - INFO - Criando agentes...
+2025-05-14 16:51:00,766 - agente - INFO - Agentes criados com sucesso
+2025-05-14 16:51:00,766 - agente - INFO - Criando executores...
+2025-05-14 16:51:00,767 - agente - INFO - Executores criados com sucesso
+2025-05-14 16:51:00,768 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 16:51:05,743 - agente - INFO - Criando prompt template...
+2025-05-14 16:51:05,745 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 16:51:05,749 - agente - INFO - Inicializando LLM geral com modelo: qwen3-0.6b
+2025-05-14 16:51:07,127 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 16:51:07,127 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 16:51:08,226 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 16:51:08,226 - agente - INFO - Criando agentes...
+2025-05-14 16:51:08,312 - agente - INFO - Agentes criados com sucesso
+2025-05-14 16:51:08,312 - agente - INFO - Criando executores...
+2025-05-14 16:51:08,312 - agente - INFO - Executores criados com sucesso
+2025-05-14 16:51:08,314 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 17:00:26,791 - agente - INFO - Criando prompt template...
+2025-05-14 17:00:26,794 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 17:00:26,794 - agente - INFO - Inicializando LLM geral com modelo: qwen3-4b
+2025-05-14 17:00:28,799 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 17:00:28,800 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 17:00:30,490 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 17:00:30,491 - agente - INFO - Criando agentes...
+2025-05-14 17:00:30,672 - agente - INFO - Agentes criados com sucesso
+2025-05-14 17:00:30,672 - agente - INFO - Criando executores...
+2025-05-14 17:00:30,677 - agente - INFO - Executores criados com sucesso
+2025-05-14 17:00:30,678 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 17:00:31,633 - agente - INFO - Criando prompt template...
+2025-05-14 17:00:31,635 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 17:00:31,636 - agente - INFO - Inicializando LLM geral com modelo: qwen3-0.6b
+2025-05-14 17:00:33,420 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 17:00:33,421 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 17:00:35,155 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 17:00:35,155 - agente - INFO - Criando agentes...
+2025-05-14 17:00:35,338 - agente - INFO - Agentes criados com sucesso
+2025-05-14 17:00:35,339 - agente - INFO - Criando executores...
+2025-05-14 17:00:35,339 - agente - INFO - Executores criados com sucesso
+2025-05-14 17:00:35,340 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 17:00:59,239 - agente - ERROR - Erro ao processar mensagem: 'Input to ChatPromptTemplate is missing variables {\'chat_history\', \'"diretorio"\'}.  Expected: [\'"diretorio"\', \'agent_scratchpad\', \'chat_history\', \'input\'] Received: [\'input\', \'intermediate_steps\', \'agent_scratchpad\']\nNote: if you intended {chat_history} to be part of the string and not a variable, please escape it with double curly braces like: \'{{chat_history}}\'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT '
+2025-05-14 17:03:25,984 - agente - INFO - Criando prompt template...
+2025-05-14 17:03:25,986 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 17:03:25,988 - agente - INFO - Inicializando LLM geral com modelo: qwen3-4b
+2025-05-14 17:03:27,008 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 17:03:27,009 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 17:03:28,063 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 17:03:28,063 - agente - INFO - Criando agentes...
+2025-05-14 17:03:28,163 - agente - INFO - Agentes criados com sucesso
+2025-05-14 17:03:28,163 - agente - INFO - Criando executores...
+2025-05-14 17:03:28,164 - agente - INFO - Executores criados com sucesso
+2025-05-14 17:03:28,165 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 17:03:48,037 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-14 17:06:48,039 - agente - ERROR - Erro ao processar mensagem: timed out
+2025-05-14 17:07:43,350 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-14 17:09:52,296 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_170952.json'
+2025-05-14 17:09:52,298 - agente - INFO - Mensagem processada com sucesso: oi tudo bem?...
+2025-05-14 17:11:59,558 - __main__ - INFO - Inicializando novo agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 17:11:59,559 - agente - INFO - Criando prompt template...
+2025-05-14 17:11:59,560 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 17:11:59,562 - agente - INFO - Inicializando LLM geral com modelo: qwen3-4b
+2025-05-14 17:12:00,913 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 17:12:00,913 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 17:12:02,320 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 17:12:02,321 - agente - INFO - Criando agentes...
+2025-05-14 17:12:02,443 - agente - INFO - Agentes criados com sucesso
+2025-05-14 17:12:02,443 - agente - INFO - Criando executores...
+2025-05-14 17:12:02,444 - agente - INFO - Executores criados com sucesso
+2025-05-14 17:12:02,446 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 17:12:02,448 - __main__ - ERROR - Erro ao inicializar agente: 'SystemMessagePromptTemplate' object has no attribute 'content'
+2025-05-14 17:14:13,559 - __main__ - INFO - Inicializando novo agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 17:14:13,559 - agente - INFO - Criando prompt template...
+2025-05-14 17:14:13,560 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 17:14:13,561 - agente - INFO - Inicializando LLM geral com modelo: qwen3-4b
+2025-05-14 17:14:14,641 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 17:14:14,642 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 17:14:15,689 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 17:14:15,689 - agente - INFO - Criando agentes...
+2025-05-14 17:14:15,782 - agente - INFO - Agentes criados com sucesso
+2025-05-14 17:14:15,782 - agente - INFO - Criando executores...
+2025-05-14 17:14:15,783 - agente - INFO - Executores criados com sucesso
+2025-05-14 17:14:15,783 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 17:14:31,995 - __main__ - INFO - Inicializando novo agente com modelos: geral=qwen3-0.6b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 17:14:31,996 - agente - INFO - Criando prompt template...
+2025-05-14 17:14:31,996 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 17:14:31,998 - agente - INFO - Inicializando LLM geral com modelo: qwen3-0.6b
+2025-05-14 17:14:33,095 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 17:14:33,095 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 17:14:34,072 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 17:14:34,072 - agente - INFO - Criando agentes...
+2025-05-14 17:14:34,146 - agente - INFO - Agentes criados com sucesso
+2025-05-14 17:14:34,146 - agente - INFO - Criando executores...
+2025-05-14 17:14:34,147 - agente - INFO - Executores criados com sucesso
+2025-05-14 17:14:34,147 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 17:14:43,409 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-14 17:15:37,359 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_171537.json'
+2025-05-14 17:15:37,360 - agente - INFO - Mensagem processada com sucesso: oi tudo bem...
+2025-05-14 17:18:27,302 - __main__ - INFO - Inicializando novo agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 17:18:27,302 - agente - INFO - Criando prompt template...
+2025-05-14 17:18:27,304 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 17:18:27,305 - agente - INFO - Inicializando LLM geral com modelo: qwen3-4b
+2025-05-14 17:18:28,518 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 17:18:28,518 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 17:18:29,560 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 17:18:29,566 - agente - INFO - Criando agentes...
+2025-05-14 17:18:29,649 - agente - INFO - Agentes criados com sucesso
+2025-05-14 17:18:29,649 - agente - INFO - Criando executores...
+2025-05-14 17:18:29,650 - agente - INFO - Executores criados com sucesso
+2025-05-14 17:18:29,650 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 17:18:33,667 - __main__ - INFO - Inicializando novo agente com modelos: geral=qwen3-0.6b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 17:18:33,668 - agente - INFO - Criando prompt template...
+2025-05-14 17:18:33,669 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 17:18:33,669 - agente - INFO - Inicializando LLM geral com modelo: qwen3-0.6b
+2025-05-14 17:18:34,888 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 17:18:34,889 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 17:18:35,845 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 17:18:35,846 - agente - INFO - Criando agentes...
+2025-05-14 17:18:35,924 - agente - INFO - Agentes criados com sucesso
+2025-05-14 17:18:35,924 - agente - INFO - Criando executores...
+2025-05-14 17:18:35,926 - agente - INFO - Executores criados com sucesso
+2025-05-14 17:18:35,926 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 17:18:42,413 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-14 17:19:19,744 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_171919.json'
+2025-05-14 17:19:19,744 - agente - INFO - Mensagem processada com sucesso: oi tudo bem?...
+2025-05-14 17:20:50,817 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-14 17:21:04,916 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_172104.json'
+2025-05-14 17:21:04,916 - agente - INFO - Mensagem processada com sucesso: liste todos arquivos disponives no meu desktop...
+2025-05-14 17:24:24,189 - __main__ - INFO - Inicializando novo agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 17:24:24,190 - agente - INFO - Criando prompt template...
+2025-05-14 17:24:24,192 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 17:24:24,192 - agente - INFO - Inicializando LLM geral com modelo: qwen3-4b
+2025-05-14 17:24:25,371 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 17:24:25,371 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 17:24:26,366 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 17:24:26,366 - agente - INFO - Criando agentes...
+2025-05-14 17:24:26,454 - agente - INFO - Agentes criados com sucesso
+2025-05-14 17:24:26,454 - agente - INFO - Criando executores...
+2025-05-14 17:24:26,456 - agente - INFO - Executores criados com sucesso
+2025-05-14 17:24:26,456 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 17:24:51,234 - langchain_core.callbacks.manager - WARNING - Error in PensamentoCallback.on_chain_start callback: AttributeError("'PensamentoCallback' object has no attribute 'ignore_chain'")
+2025-05-14 17:24:51,235 - agente - ERROR - Erro ao processar mensagem: 'PensamentoCallback' object has no attribute 'raise_error'
+2025-05-14 17:25:19,036 - langchain_core.callbacks.manager - WARNING - Error in PensamentoCallback.on_chain_start callback: AttributeError("'PensamentoCallback' object has no attribute 'ignore_chain'")
+2025-05-14 17:25:19,037 - agente - ERROR - Erro ao processar mensagem: 'PensamentoCallback' object has no attribute 'raise_error'
+2025-05-14 17:26:18,372 - __main__ - INFO - Inicializando novo agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 17:26:18,373 - agente - INFO - Criando prompt template...
+2025-05-14 17:26:18,373 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 17:26:18,373 - agente - INFO - Inicializando LLM geral com modelo: qwen3-4b
+2025-05-14 17:26:19,441 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 17:26:19,441 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 17:26:20,339 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 17:26:20,341 - agente - INFO - Criando agentes...
+2025-05-14 17:26:20,425 - agente - INFO - Agentes criados com sucesso
+2025-05-14 17:26:20,425 - agente - INFO - Criando executores...
+2025-05-14 17:26:20,425 - agente - INFO - Executores criados com sucesso
+2025-05-14 17:26:20,426 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 17:26:23,083 - __main__ - INFO - Inicializando novo agente com modelos: geral=qwen3-0.6b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 17:26:23,083 - agente - INFO - Criando prompt template...
+2025-05-14 17:26:23,083 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 17:26:23,084 - agente - INFO - Inicializando LLM geral com modelo: qwen3-0.6b
+2025-05-14 17:26:24,214 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 17:26:24,214 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 17:26:25,228 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 17:26:25,228 - agente - INFO - Criando agentes...
+2025-05-14 17:26:25,323 - agente - INFO - Agentes criados com sucesso
+2025-05-14 17:26:25,323 - agente - INFO - Criando executores...
+2025-05-14 17:26:25,324 - agente - INFO - Executores criados com sucesso
+2025-05-14 17:26:25,324 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 17:26:53,587 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-14 17:27:32,321 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_172732.json'
+2025-05-14 17:27:32,322 - agente - INFO - Mensagem processada com sucesso: oi tudo bem quale a temperatura de mozambique?...
+2025-05-14 17:28:28,254 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-14 17:28:47,643 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_172847.json'
+2025-05-14 17:28:47,644 - agente - INFO - Mensagem processada com sucesso: OI TUDO BEM?...
+2025-05-14 17:31:46,378 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-14 17:32:13,942 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_173213.json'
+2025-05-14 17:32:13,942 - agente - INFO - Mensagem processada com sucesso: liste arquivos no meu desktop...
+2025-05-14 17:33:09,175 - __main__ - INFO - Inicializando novo agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 17:33:09,175 - agente - INFO - Criando prompt template...
+2025-05-14 17:33:09,177 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 17:33:09,177 - agente - INFO - Inicializando LLM geral com modelo: qwen3-4b
+2025-05-14 17:33:10,312 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 17:33:10,313 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 17:33:11,306 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 17:33:11,307 - agente - INFO - Criando agentes...
+2025-05-14 17:33:11,390 - agente - INFO - Agentes criados com sucesso
+2025-05-14 17:33:11,391 - agente - INFO - Criando executores...
+2025-05-14 17:33:11,391 - agente - INFO - Executores criados com sucesso
+2025-05-14 17:33:11,392 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 17:33:14,269 - agente - INFO - Histórico limpo com sucesso
+2025-05-14 17:33:23,711 - agente - INFO - Histórico limpo com sucesso
+2025-05-14 17:33:29,325 - __main__ - INFO - Inicializando novo agente com modelos: geral=qwen3-0.6b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 17:33:29,326 - agente - INFO - Criando prompt template...
+2025-05-14 17:33:29,326 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 17:33:29,327 - agente - INFO - Inicializando LLM geral com modelo: qwen3-0.6b
+2025-05-14 17:33:30,312 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 17:33:30,314 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 17:33:31,212 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 17:33:31,212 - agente - INFO - Criando agentes...
+2025-05-14 17:33:31,280 - agente - INFO - Agentes criados com sucesso
+2025-05-14 17:33:31,280 - agente - INFO - Criando executores...
+2025-05-14 17:33:31,280 - agente - INFO - Executores criados com sucesso
+2025-05-14 17:33:31,280 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 17:33:51,781 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-14 17:34:23,147 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_173423.json'
+2025-05-14 17:34:23,148 - agente - INFO - Mensagem processada com sucesso: liste arquivos que estao no meu desktop...
+2025-05-14 17:38:54,936 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-14 17:39:31,301 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_173931.json'
+2025-05-14 17:39:31,301 - agente - INFO - Mensagem processada com sucesso: oi...
+2025-05-14 17:40:43,442 - __main__ - INFO - Inicializando novo agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 17:40:43,443 - agente - INFO - Criando prompt template...
+2025-05-14 17:40:43,444 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 17:40:43,444 - agente - INFO - Inicializando LLM geral com modelo: qwen3-4b
+2025-05-14 17:40:44,416 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 17:40:44,417 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 17:40:45,394 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 17:40:45,394 - agente - INFO - Criando agentes...
+2025-05-14 17:40:45,463 - agente - INFO - Agentes criados com sucesso
+2025-05-14 17:40:45,464 - agente - INFO - Criando executores...
+2025-05-14 17:40:45,465 - agente - INFO - Executores criados com sucesso
+2025-05-14 17:40:45,465 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 17:40:50,668 - __main__ - INFO - Inicializando novo agente com modelos: geral=qwen3-0.6b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 17:40:50,669 - agente - INFO - Criando prompt template...
+2025-05-14 17:40:50,669 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 17:40:50,670 - agente - INFO - Inicializando LLM geral com modelo: qwen3-0.6b
+2025-05-14 17:40:51,645 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 17:40:51,646 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 17:40:52,569 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 17:40:52,570 - agente - INFO - Criando agentes...
+2025-05-14 17:40:52,639 - agente - INFO - Agentes criados com sucesso
+2025-05-14 17:40:52,639 - agente - INFO - Criando executores...
+2025-05-14 17:40:52,640 - agente - INFO - Executores criados com sucesso
+2025-05-14 17:40:52,640 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 17:41:18,702 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-14 17:42:09,633 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-14 17:42:31,303 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_174231.json'
+2025-05-14 17:42:31,303 - agente - INFO - Mensagem processada com sucesso: liste todos arquivos presente na pasta desktop...
+2025-05-14 17:43:46,877 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-14 17:45:09,132 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-14 17:45:26,650 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_174526.json'
+2025-05-14 17:45:26,652 - agente - INFO - Mensagem processada com sucesso: liste arquivo no desktop...
+2025-05-14 17:46:15,292 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-14 17:46:54,591 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_174654.json'
+2025-05-14 17:46:54,592 - agente - INFO - Mensagem processada com sucesso: vamos criar um site de vendas online...
+2025-05-14 17:49:22,836 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-14 17:50:38,684 - root - INFO - Pesquisando na web por: 'Qual é o que está acontecendo na web?'
+2025-05-14 17:50:47,064 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-14 17:51:35,092 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_175135.json'
+2025-05-14 17:51:35,092 - agente - INFO - Mensagem processada com sucesso: oi liste todos tipos de arquivos disponiveis no me...
+2025-05-14 17:55:22,592 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-14 17:56:14,401 - agente - ERROR - Resposta contém placeholder {input}
+2025-05-14 18:02:21,765 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-14 18:02:59,417 - agente - ERROR - Resposta contém placeholder {input}
+2025-05-14 18:11:26,377 - __main__ - INFO - Inicializando novo agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 18:11:26,377 - agente - INFO - Criando prompt template...
+2025-05-14 18:11:26,379 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 18:11:26,380 - agente - INFO - Inicializando LLM geral com modelo: qwen3-4b
+2025-05-14 18:11:27,544 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 18:11:27,544 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 18:11:28,801 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 18:11:28,802 - agente - INFO - Criando agentes...
+2025-05-14 18:11:28,878 - agente - INFO - Agentes criados com sucesso
+2025-05-14 18:11:28,879 - agente - INFO - Criando executores...
+2025-05-14 18:11:28,879 - agente - INFO - Executores criados com sucesso
+2025-05-14 18:11:28,881 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 18:11:53,394 - __main__ - INFO - Inicializando novo agente com modelos: geral=qwen3-0.6b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 18:11:53,396 - agente - INFO - Criando prompt template...
+2025-05-14 18:11:53,396 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 18:11:53,396 - agente - INFO - Inicializando LLM geral com modelo: qwen3-0.6b
+2025-05-14 18:11:54,402 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 18:11:54,404 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 18:11:55,369 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 18:11:55,369 - agente - INFO - Criando agentes...
+2025-05-14 18:11:55,444 - agente - INFO - Agentes criados com sucesso
+2025-05-14 18:11:55,444 - agente - INFO - Criando executores...
+2025-05-14 18:11:55,444 - agente - INFO - Executores criados com sucesso
+2025-05-14 18:11:55,445 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 18:12:05,906 - agente - INFO - Escolhendo executor geral para tarefa não específica
+2025-05-14 18:12:05,920 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-14 18:12:50,088 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_181250.json'
+2025-05-14 18:12:50,089 - agente - INFO - Mensagem processada com sucesso: qual e tempo de hoje em mozambique...
+2025-05-14 18:14:52,875 - __main__ - INFO - Inicializando novo agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 18:14:52,876 - agente - INFO - Criando prompt template...
+2025-05-14 18:14:52,877 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 18:14:52,877 - agente - INFO - Inicializando LLM geral com modelo: qwen3-4b
+2025-05-14 18:14:54,038 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 18:14:54,038 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 18:14:55,113 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 18:14:55,113 - agente - INFO - Criando agentes...
+2025-05-14 18:14:55,191 - agente - INFO - Agentes criados com sucesso
+2025-05-14 18:14:55,191 - agente - INFO - Criando executores...
+2025-05-14 18:14:55,192 - agente - INFO - Executores criados com sucesso
+2025-05-14 18:14:55,192 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 18:15:08,118 - agente - INFO - Escolhendo executor geral para tarefa não específica
+2025-05-14 18:15:19,821 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-14 18:20:09,161 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-14 18:21:53,148 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_182153.json'
+2025-05-14 18:21:53,150 - agente - INFO - Mensagem processada com sucesso: qual e a temperatura em mozambique...
+2025-05-14 18:28:09,353 - __main__ - INFO - Inicializando novo agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 18:28:09,354 - agente - INFO - Criando prompt template...
+2025-05-14 18:28:09,355 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 18:28:09,355 - agente - INFO - Inicializando LLM geral com modelo: qwen3-4b
+2025-05-14 18:28:10,416 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 18:28:10,416 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 18:28:11,275 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 18:28:11,276 - agente - INFO - Criando agentes...
+2025-05-14 18:28:11,360 - agente - INFO - Agentes criados com sucesso
+2025-05-14 18:28:11,360 - agente - INFO - Criando executores...
+2025-05-14 18:28:11,361 - agente - INFO - Executores criados com sucesso
+2025-05-14 18:28:11,361 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 18:28:23,642 - __main__ - INFO - Inicializando novo agente com modelos: geral=qwen3-0.6b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 18:28:23,643 - agente - INFO - Criando prompt template...
+2025-05-14 18:28:23,643 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 18:28:23,644 - agente - INFO - Inicializando LLM geral com modelo: qwen3-0.6b
+2025-05-14 18:28:24,678 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 18:28:24,678 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 18:28:25,601 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 18:28:25,601 - agente - INFO - Criando agentes...
+2025-05-14 18:28:25,674 - agente - INFO - Agentes criados com sucesso
+2025-05-14 18:28:25,676 - agente - INFO - Criando executores...
+2025-05-14 18:28:25,676 - agente - INFO - Executores criados com sucesso
+2025-05-14 18:28:25,676 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 18:28:27,272 - agente - INFO - Histórico limpo com sucesso
+2025-05-14 18:28:47,369 - agente - INFO - Análise da mensagem: {'intencao': None, 'contexto': None, 'ferramenta': None, 'parametros': {}, 'eh_codigo': False, 'confianca': 0.0, 'erro': None}
+2025-05-14 18:29:22,616 - agente - INFO - Análise da mensagem: {'intencao': None, 'contexto': None, 'ferramenta': None, 'parametros': {}, 'eh_codigo': False, 'confianca': 0.0, 'erro': None}
+2025-05-14 18:29:44,277 - agente - INFO - Análise da mensagem: {'intencao': None, 'contexto': None, 'ferramenta': None, 'parametros': {}, 'eh_codigo': False, 'confianca': 0.0, 'erro': 'Sua mensagem parece incompleta. Poderia fornecer mais detalhes sobre o que você precisa?'}
+2025-05-14 18:31:51,675 - __main__ - INFO - Inicializando novo agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 18:31:51,677 - agente - INFO - Criando prompt template...
+2025-05-14 18:31:51,678 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 18:31:51,678 - agente - INFO - Inicializando LLM geral com modelo: qwen3-4b
+2025-05-14 18:31:52,672 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 18:31:52,672 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 18:31:53,584 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 18:31:53,584 - agente - INFO - Criando agentes...
+2025-05-14 18:31:53,651 - agente - INFO - Agentes criados com sucesso
+2025-05-14 18:31:53,652 - agente - INFO - Criando executores...
+2025-05-14 18:31:53,652 - agente - INFO - Executores criados com sucesso
+2025-05-14 18:31:53,653 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 18:32:15,076 - agente - INFO - Análise da mensagem: {'intencao': None, 'contexto': None, 'ferramenta': None, 'parametros': {}, 'eh_codigo': False, 'confianca': 0.0, 'erro': None}
+2025-05-14 18:33:49,864 - __main__ - INFO - Inicializando novo agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 18:33:49,864 - agente - INFO - Criando prompt template...
+2025-05-14 18:33:49,865 - agente - INFO - Prompt template criado com sucesso
+2025-05-14 18:33:49,866 - agente - INFO - Inicializando LLM geral com modelo: qwen3-4b
+2025-05-14 18:33:51,788 - agente - INFO - LLM geral inicializado com sucesso
+2025-05-14 18:33:51,789 - agente - INFO - Inicializando LLM coder com modelo: qwen2.5-coder-3b-instruct
+2025-05-14 18:33:53,413 - agente - INFO - LLM coder inicializado com sucesso
+2025-05-14 18:33:53,414 - agente - INFO - Criando agentes...
+2025-05-14 18:33:53,640 - agente - INFO - Agentes criados com sucesso
+2025-05-14 18:33:53,643 - agente - INFO - Criando executores...
+2025-05-14 18:33:53,646 - agente - INFO - Executores criados com sucesso
+2025-05-14 18:33:53,647 - agente - INFO - Agente IA inicializado com sucesso (LM Studio - multi-modelo)
+2025-05-14 18:34:29,680 - agente - INFO - Análise da mensagem: {'intencao': 'saudacao', 'ferramenta': None, 'parametros': {}, 'confianca': 0.6, 'erro': None}
+2025-05-14 18:34:29,774 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-14 18:40:16,013 - httpx - INFO - HTTP Request: POST http://192.168.8.1:1234/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-14 18:42:14,929 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_184214.json'
+2025-05-14 18:51:00,750 - __main__ - INFO - Inicializando novo agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 18:51:00,751 - agente - ERROR - Erro ao inicializar executores: module 'config' has no attribute 'LLM_TOP_P'
+2025-05-14 18:51:00,751 - __main__ - ERROR - Erro ao inicializar agente: name 'AgenteError' is not defined
+2025-05-14 18:54:15,095 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 18:54:16,128 - agente - ERROR - Erro ao inicializar executores: list indices must be integers or slices, not str
+2025-05-14 18:54:16,128 - __main__ - ERROR - Erro na inicialização do agente: name 'AgenteError' is not defined
+2025-05-14 18:54:16,129 - __main__ - ERROR - Erro ao obter agente: Falha ao inicializar o agente: name 'AgenteError' is not defined
+2025-05-14 18:54:16,131 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 18:54:17,011 - agente - ERROR - Erro ao inicializar executores: list indices must be integers or slices, not str
+2025-05-14 18:54:17,012 - __main__ - ERROR - Erro na inicialização do agente: name 'AgenteError' is not defined
+2025-05-14 18:54:17,012 - __main__ - ERROR - Erro ao obter agente: Falha ao inicializar o agente: name 'AgenteError' is not defined
+2025-05-14 18:54:59,548 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 18:55:00,443 - agente - ERROR - Erro ao inicializar executores: list indices must be integers or slices, not str
+2025-05-14 18:55:00,444 - __main__ - ERROR - Erro na inicialização do agente: name 'AgenteError' is not defined
+2025-05-14 18:55:00,446 - __main__ - ERROR - Erro ao obter agente: Falha ao inicializar o agente: name 'AgenteError' is not defined
+2025-05-14 18:55:00,449 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 18:55:00,772 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-0.6b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 18:55:01,623 - agente - ERROR - Erro ao inicializar executores: list indices must be integers or slices, not str
+2025-05-14 18:55:01,623 - __main__ - ERROR - Erro na inicialização do agente: name 'AgenteError' is not defined
+2025-05-14 18:55:01,923 - agente - ERROR - Erro ao inicializar executores: list indices must be integers or slices, not str
+2025-05-14 18:55:01,923 - __main__ - ERROR - Erro na inicialização do agente: name 'AgenteError' is not defined
+2025-05-14 18:55:01,924 - __main__ - ERROR - Erro ao obter agente: Falha ao inicializar o agente: name 'AgenteError' is not defined
+2025-05-14 18:55:01,926 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-0.6b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 18:55:02,950 - agente - ERROR - Erro ao inicializar executores: list indices must be integers or slices, not str
+2025-05-14 18:55:02,951 - __main__ - ERROR - Erro na inicialização do agente: name 'AgenteError' is not defined
+2025-05-14 18:55:02,951 - __main__ - ERROR - Erro ao obter agente: Falha ao inicializar o agente: name 'AgenteError' is not defined
+2025-05-14 18:55:29,037 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-0.6b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 18:55:29,938 - agente - ERROR - Erro ao inicializar executores: list indices must be integers or slices, not str
+2025-05-14 18:55:29,940 - __main__ - ERROR - Erro na inicialização do agente: name 'AgenteError' is not defined
+2025-05-14 18:55:29,940 - __main__ - ERROR - Erro ao obter agente: Falha ao inicializar o agente: name 'AgenteError' is not defined
+2025-05-14 18:55:29,942 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-0.6b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 18:55:30,865 - agente - ERROR - Erro ao inicializar executores: list indices must be integers or slices, not str
+2025-05-14 18:55:30,866 - __main__ - ERROR - Erro na inicialização do agente: name 'AgenteError' is not defined
+2025-05-14 18:55:30,866 - __main__ - ERROR - Erro ao obter agente: Falha ao inicializar o agente: name 'AgenteError' is not defined
+2025-05-14 18:55:30,871 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-0.6b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 18:55:31,772 - agente - ERROR - Erro ao inicializar executores: list indices must be integers or slices, not str
+2025-05-14 18:55:31,772 - __main__ - ERROR - Erro na inicialização do agente: name 'AgenteError' is not defined
+2025-05-14 18:55:31,772 - __main__ - ERROR - Erro ao obter agente: Falha ao inicializar o agente: name 'AgenteError' is not defined
+2025-05-14 18:56:32,323 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 18:56:33,327 - agente - ERROR - Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:33,327 - agente - ERROR - Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:33,327 - __main__ - ERROR - Erro na inicialização do agente: Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:33,329 - __main__ - ERROR - Erro ao obter agente: Falha ao inicializar o agente: Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:33,332 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 18:56:34,292 - agente - ERROR - Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:34,292 - agente - ERROR - Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:34,293 - __main__ - ERROR - Erro na inicialização do agente: Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:34,293 - __main__ - ERROR - Erro ao obter agente: Falha ao inicializar o agente: Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:38,794 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 18:56:39,700 - agente - ERROR - Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:39,701 - agente - ERROR - Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:39,701 - __main__ - ERROR - Erro na inicialização do agente: Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:39,702 - __main__ - ERROR - Erro ao obter agente: Falha ao inicializar o agente: Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:39,704 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 18:56:40,744 - agente - ERROR - Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:40,744 - agente - ERROR - Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:40,744 - __main__ - ERROR - Erro na inicialização do agente: Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:40,745 - __main__ - ERROR - Erro ao obter agente: Falha ao inicializar o agente: Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:51,779 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 18:56:52,670 - agente - ERROR - Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:52,670 - agente - ERROR - Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:52,671 - __main__ - ERROR - Erro na inicialização do agente: Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:52,671 - __main__ - ERROR - Erro ao obter agente: Falha ao inicializar o agente: Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:52,673 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 18:56:53,571 - agente - ERROR - Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:53,572 - agente - ERROR - Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:53,572 - __main__ - ERROR - Erro na inicialização do agente: Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:53,572 - __main__ - ERROR - Erro ao obter agente: Falha ao inicializar o agente: Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:53,656 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 18:56:54,552 - agente - ERROR - Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:54,552 - agente - ERROR - Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:54,553 - __main__ - ERROR - Erro na inicialização do agente: Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:54,553 - __main__ - ERROR - Erro ao obter agente: Falha ao inicializar o agente: Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:54,555 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 18:56:55,460 - agente - ERROR - Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:55,461 - agente - ERROR - Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:55,461 - __main__ - ERROR - Erro na inicialização do agente: Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 18:56:55,461 - __main__ - ERROR - Erro ao obter agente: Falha ao inicializar o agente: Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object has no attribute 'get'
+2025-05-14 19:00:02,831 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 19:00:03,879 - agente - ERROR - Erro ao obter ferramentas gerais: 'list' object is not callable
+2025-05-14 19:00:03,880 - agente - ERROR - Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object is not callable
+2025-05-14 19:00:03,880 - __main__ - ERROR - Erro na inicialização do agente: Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object is not callable
+2025-05-14 19:00:03,881 - __main__ - ERROR - Erro ao obter agente: Falha ao inicializar o agente: Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object is not callable
+2025-05-14 19:00:03,883 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 19:00:04,896 - agente - ERROR - Erro ao obter ferramentas gerais: 'list' object is not callable
+2025-05-14 19:00:04,896 - agente - ERROR - Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object is not callable
+2025-05-14 19:00:04,896 - __main__ - ERROR - Erro na inicialização do agente: Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object is not callable
+2025-05-14 19:00:04,898 - __main__ - ERROR - Erro ao obter agente: Falha ao inicializar o agente: Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object is not callable
+2025-05-14 19:00:31,862 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 19:00:32,823 - agente - ERROR - Erro ao obter ferramentas gerais: 'list' object is not callable
+2025-05-14 19:00:32,823 - agente - ERROR - Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object is not callable
+2025-05-14 19:00:32,824 - __main__ - ERROR - Erro na inicialização do agente: Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object is not callable
+2025-05-14 19:00:32,824 - __main__ - ERROR - Erro ao obter agente: Falha ao inicializar o agente: Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object is not callable
+2025-05-14 19:00:32,826 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 19:00:33,684 - agente - ERROR - Erro ao obter ferramentas gerais: 'list' object is not callable
+2025-05-14 19:00:33,685 - agente - ERROR - Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object is not callable
+2025-05-14 19:00:33,685 - __main__ - ERROR - Erro na inicialização do agente: Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object is not callable
+2025-05-14 19:00:33,686 - __main__ - ERROR - Erro ao obter agente: Falha ao inicializar o agente: Erro ao inicializar executores: Erro ao obter ferramentas gerais: 'list' object is not callable
+2025-05-14 19:02:47,076 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 19:02:48,213 - agente - INFO - Executor geral inicializado com modelo qwen3-4b
+2025-05-14 19:02:49,088 - agente - INFO - Executor coder inicializado com modelo qwen2.5-coder-3b-instruct
+2025-05-14 19:02:49,089 - agente - INFO - Agente inicializado com modelos qwen3-4b e qwen2.5-coder-3b-instruct
+2025-05-14 19:02:49,089 - __main__ - INFO - Agente inicializado com sucesso
+2025-05-14 19:03:09,671 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 19:03:10,876 - agente - INFO - Executor geral inicializado com modelo qwen3-4b
+2025-05-14 19:03:11,840 - agente - INFO - Executor coder inicializado com modelo qwen2.5-coder-3b-instruct
+2025-05-14 19:03:11,841 - agente - INFO - Agente inicializado com modelos qwen3-4b e qwen2.5-coder-3b-instruct
+2025-05-14 19:03:11,842 - __main__ - INFO - Agente inicializado com sucesso
+2025-05-14 19:05:33,454 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 19:05:33,462 - agente - ERROR - Erro ao criar agente: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-05-14 19:05:33,463 - agente - ERROR - Erro ao inicializar executores: Erro ao criar agente: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-05-14 19:05:33,463 - __main__ - ERROR - Erro na inicialização do agente: Erro ao inicializar executores: Erro ao criar agente: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-05-14 19:05:33,464 - __main__ - ERROR - Erro ao obter agente: Falha ao inicializar o agente: Erro ao inicializar executores: Erro ao criar agente: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-05-14 19:05:33,468 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 19:05:33,470 - agente - ERROR - Erro ao criar agente: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-05-14 19:05:33,471 - agente - ERROR - Erro ao inicializar executores: Erro ao criar agente: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-05-14 19:05:33,471 - __main__ - ERROR - Erro na inicialização do agente: Erro ao inicializar executores: Erro ao criar agente: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-05-14 19:05:33,472 - __main__ - ERROR - Erro ao obter agente: Falha ao inicializar o agente: Erro ao inicializar executores: Erro ao criar agente: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-05-14 19:06:31,133 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 19:06:31,135 - agente - ERROR - Erro ao criar agente: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-05-14 19:06:31,136 - agente - ERROR - Erro ao inicializar executores: Erro ao criar agente: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-05-14 19:06:31,136 - __main__ - ERROR - Erro na inicialização do agente: Erro ao inicializar executores: Erro ao criar agente: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-05-14 19:06:31,137 - __main__ - ERROR - Erro ao obter agente: Falha ao inicializar o agente: Erro ao inicializar executores: Erro ao criar agente: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-05-14 19:06:31,139 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 19:06:31,141 - agente - ERROR - Erro ao criar agente: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-05-14 19:06:31,141 - agente - ERROR - Erro ao inicializar executores: Erro ao criar agente: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-05-14 19:06:31,141 - __main__ - ERROR - Erro na inicialização do agente: Erro ao inicializar executores: Erro ao criar agente: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-05-14 19:06:31,142 - __main__ - ERROR - Erro ao obter agente: Falha ao inicializar o agente: Erro ao inicializar executores: Erro ao criar agente: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-05-14 19:48:20,301 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 19:48:20,323 - agente - INFO - Executor geral inicializado com sucesso
+2025-05-14 19:48:20,359 - agente - INFO - Executor de código inicializado com sucesso
+2025-05-14 19:48:20,360 - agente - INFO - Agente inicializado com modelos qwen3-4b e qwen2.5-coder-3b-instruct
+2025-05-14 19:48:20,361 - __main__ - INFO - Agente inicializado com sucesso
+2025-05-14 19:53:10,939 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 19:53:10,961 - agente - INFO - Executor geral inicializado com sucesso
+2025-05-14 19:53:10,994 - agente - INFO - Executor de código inicializado com sucesso
+2025-05-14 19:53:10,995 - agente - INFO - Agente inicializado com modelos qwen3-4b e qwen2.5-coder-3b-instruct
+2025-05-14 19:53:10,996 - __main__ - INFO - Agente inicializado com sucesso
+2025-05-14 19:53:29,136 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-0.6b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 19:53:29,158 - agente - INFO - Executor geral inicializado com sucesso
+2025-05-14 19:53:29,180 - agente - INFO - Executor de código inicializado com sucesso
+2025-05-14 19:53:29,181 - agente - INFO - Agente inicializado com modelos qwen3-0.6b e qwen2.5-coder-3b-instruct
+2025-05-14 19:53:29,183 - __main__ - INFO - Agente inicializado com sucesso
+2025-05-14 19:53:41,080 - agente - INFO - Análise da mensagem: {'intencao': None, 'ferramenta': None, 'parametros': {}, 'confianca': 0.0, 'erro': None, 'sugestoes': []}
+2025-05-14 19:54:10,041 - agente - INFO - Análise da mensagem: {'intencao': 'listar', 'ferramenta': 'listar_arquivos', 'parametros': {'diretorio': 'desktop'}, 'confianca': 1.0, 'erro': None, 'sugestoes': ['mostre os arquivos do desktop', 'liste o conteúdo da pasta documentos']}
+2025-05-14 19:54:10,042 - agente - INFO - Escolhendo executor geral para tarefa não específica
+2025-05-14 19:54:10,071 - agente - ERROR - Erro ao processar mensagem: variable chat_history should be a list of base messages, got Usuário: qual e a temperatura de hoje?
+Usuário: mostre os arquivos do desktop of type <class 'str'>
+2025-05-14 19:56:26,202 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 19:56:26,262 - agente - INFO - Executor geral inicializado com sucesso
+2025-05-14 19:56:26,373 - agente - INFO - Executor de código inicializado com sucesso
+2025-05-14 19:56:26,377 - agente - INFO - Agente inicializado com modelos qwen3-4b e qwen2.5-coder-3b-instruct
+2025-05-14 19:56:26,382 - __main__ - INFO - Agente inicializado com sucesso
+2025-05-14 19:56:33,295 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-0.6b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 19:56:33,326 - agente - INFO - Executor geral inicializado com sucesso
+2025-05-14 19:56:33,352 - agente - INFO - Executor de código inicializado com sucesso
+2025-05-14 19:56:33,352 - agente - INFO - Agente inicializado com modelos qwen3-0.6b e qwen2.5-coder-3b-instruct
+2025-05-14 19:56:33,353 - __main__ - INFO - Agente inicializado com sucesso
+2025-05-14 19:57:20,549 - agente - INFO - Análise da mensagem: {'intencao': 'consulta', 'ferramenta': None, 'parametros': {}, 'confianca': 0.6000000000000001, 'erro': None, 'sugestoes': ['qual é a temperatura hoje?', 'que horas são?', 'qual é a data?']}
+2025-05-14 19:57:20,556 - agente - ERROR - Erro ao processar mensagem: variable chat_history should be a list of base messages, got Usuário: qual e a temperatura de hoje em maputo of type <class 'str'>
+2025-05-14 20:03:20,127 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 20:03:20,158 - agente - INFO - Executor geral inicializado com sucesso
+2025-05-14 20:03:20,188 - agente - INFO - Executor de código inicializado com sucesso
+2025-05-14 20:03:20,189 - agente - INFO - Agente inicializado com modelos qwen3-4b e qwen2.5-coder-3b-instruct
+2025-05-14 20:03:20,189 - __main__ - INFO - Agente inicializado com sucesso
+2025-05-14 20:03:30,667 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-0.6b, coder=qwen2.5-coder-3b-instruct
+2025-05-14 20:03:30,688 - agente - INFO - Executor geral inicializado com sucesso
+2025-05-14 20:03:30,718 - agente - INFO - Executor de código inicializado com sucesso
+2025-05-14 20:03:30,720 - agente - INFO - Agente inicializado com modelos qwen3-0.6b e qwen2.5-coder-3b-instruct
+2025-05-14 20:03:30,721 - __main__ - INFO - Agente inicializado com sucesso
+2025-05-14 20:03:47,631 - agente - INFO - Análise da mensagem: {'intencao': 'consulta', 'ferramenta': None, 'parametros': {}, 'confianca': 0.6000000000000001, 'erro': None, 'sugestoes': ['qual é a temperatura hoje?', 'que horas são?', 'qual é a data?']}
+2025-05-14 20:03:47,631 - agente - INFO - Iniciando nova conversa
+2025-05-14 20:03:51,687 - agente - ERROR - Erro ao processar mensagem: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000140FF079F70>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-05-14 20:04:21,522 - agente - INFO - Análise da mensagem: {'intencao': 'consulta', 'ferramenta': None, 'parametros': {}, 'confianca': 0.5, 'erro': None, 'sugestoes': ['qual é a temperatura hoje?', 'que horas são?', 'qual é a data?']}
+2025-05-14 20:04:25,539 - agente - ERROR - Erro ao processar mensagem: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000140FF02E180>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-05-14 20:07:59,061 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=llama-3.2-1b-instruct
+2025-05-14 20:07:59,099 - agente - INFO - Executor geral inicializado com sucesso
+2025-05-14 20:07:59,138 - agente - INFO - Executor de código inicializado com sucesso
+2025-05-14 20:07:59,138 - agente - INFO - Agente inicializado com modelos qwen3-4b e llama-3.2-1b-instruct
+2025-05-14 20:07:59,143 - __main__ - INFO - Agente inicializado com sucesso
+2025-05-14 20:08:12,186 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-0.6b, coder=llama-3.2-1b-instruct
+2025-05-14 20:08:12,206 - agente - INFO - Executor geral inicializado com sucesso
+2025-05-14 20:08:12,225 - agente - INFO - Executor de código inicializado com sucesso
+2025-05-14 20:08:12,225 - agente - INFO - Agente inicializado com modelos qwen3-0.6b e llama-3.2-1b-instruct
+2025-05-14 20:08:12,227 - __main__ - INFO - Agente inicializado com sucesso
+2025-05-14 20:08:26,705 - agente - INFO - Análise da mensagem: {'intencao': 'consulta', 'ferramenta': None, 'parametros': {}, 'confianca': 0.6000000000000001, 'erro': None, 'sugestoes': ['qual é a temperatura hoje?', 'que horas são?', 'qual é a data?']}
+2025-05-14 20:08:26,705 - agente - INFO - Iniciando nova conversa
+2025-05-14 20:08:28,761 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_200828.json'
+2025-05-14 20:08:57,261 - agente - INFO - Análise da mensagem: {'intencao': 'ajuda', 'ferramenta': None, 'parametros': {}, 'confianca': 0.7, 'erro': None, 'sugestoes': ['como posso criar um arquivo?', 'me ajude a listar os arquivos']}
+2025-05-14 20:08:57,263 - agente - INFO - Escolhendo executor geral para tarefa não específica
+2025-05-14 20:08:59,278 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_200859.json'
+2025-05-14 20:10:56,096 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=llama-3.2-1b-instruct
+2025-05-14 20:10:56,141 - agente - INFO - Executor geral inicializado com sucesso
+2025-05-14 20:10:56,207 - agente - INFO - Executor de código inicializado com sucesso
+2025-05-14 20:10:56,207 - agente - INFO - Agente inicializado com modelos qwen3-4b e llama-3.2-1b-instruct
+2025-05-14 20:10:56,208 - __main__ - INFO - Agente inicializado com sucesso
+2025-05-14 20:11:37,446 - agente - INFO - Análise da mensagem: {'intencao': 'consulta', 'ferramenta': None, 'parametros': {}, 'confianca': 0.6000000000000001, 'erro': None, 'sugestoes': ['qual é a temperatura hoje?', 'que horas são?', 'qual é a data?']}
+2025-05-14 20:11:37,446 - agente - INFO - Iniciando nova conversa
+2025-05-14 20:11:39,503 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_201139.json'
+2025-05-14 20:12:07,746 - agente - INFO - Análise da mensagem: {'intencao': None, 'ferramenta': None, 'parametros': {}, 'confianca': 0.0, 'erro': None, 'sugestoes': []}
+2025-05-14 20:12:22,264 - agente - INFO - Análise da mensagem: {'intencao': 'listar', 'ferramenta': 'listar_arquivos', 'parametros': {'diretorio': 'C:\\Users\\Sr.Africano/desktop'}, 'confianca': 1.0, 'erro': None, 'sugestoes': ['mostre os arquivos do desktop', 'liste o conteúdo da pasta documentos']}
+2025-05-14 20:12:22,264 - agente - INFO - Escolhendo executor geral para tarefa não específica
+2025-05-14 20:12:24,287 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_201224.json'
+2025-05-14 20:12:36,926 - agente - INFO - Análise da mensagem: {'intencao': 'listar', 'ferramenta': 'listar_arquivos', 'parametros': {'diretorio': 'projeto - edite o arquivo main.py'}, 'confianca': 0.6, 'erro': None, 'sugestoes': ['mostre os arquivos do desktop', 'liste o conteúdo da pasta documentos']}
+2025-05-14 20:12:36,927 - agente - INFO - Escolhendo executor geral para tarefa não específica
+2025-05-14 20:12:38,946 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_201238.json'
+2025-05-14 20:12:58,233 - agente - INFO - Análise da mensagem: {'intencao': 'criar', 'ferramenta': 'criar_estrutura_pastas', 'parametros': {}, 'confianca': 0.30000000000000004, 'erro': None, 'sugestoes': ['crie uma pasta chamada projeto', 'faça um novo arquivo python']}
+2025-05-14 20:12:58,235 - agente - INFO - Escolhendo executor geral para tarefa não específica
+2025-05-14 20:13:00,252 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_201300.json'
+2025-05-14 20:19:35,625 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=llama-3.2-1b-instruct
+2025-05-14 20:19:35,657 - agente - INFO - Executor geral inicializado com sucesso
+2025-05-14 20:19:35,835 - agente - INFO - Executor de código inicializado com sucesso
+2025-05-14 20:19:35,839 - agente - INFO - Agente inicializado com modelos qwen3-4b e llama-3.2-1b-instruct
+2025-05-14 20:19:35,840 - __main__ - INFO - Agente inicializado com sucesso
+2025-05-14 20:19:46,049 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-0.6b, coder=llama-3.2-1b-instruct
+2025-05-14 20:19:46,069 - agente - INFO - Executor geral inicializado com sucesso
+2025-05-14 20:19:46,102 - agente - INFO - Executor de código inicializado com sucesso
+2025-05-14 20:19:46,103 - agente - INFO - Agente inicializado com modelos qwen3-0.6b e llama-3.2-1b-instruct
+2025-05-14 20:19:46,103 - __main__ - INFO - Agente inicializado com sucesso
+2025-05-14 20:19:49,969 - agente - INFO - Histórico carregado com sucesso de 'historico\historico_20250514_201300.json'
+2025-05-14 20:20:06,087 - agente - INFO - Análise da mensagem: {'intencao': 'consulta', 'ferramenta': None, 'parametros': {}, 'confianca': 0.6000000000000001, 'erro': None, 'sugestoes': ['qual é a temperatura hoje?', 'que horas são?', 'qual é a data?']}
+2025-05-14 20:20:08,109 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_202008.json'
+2025-05-14 20:20:28,103 - agente - INFO - Análise da mensagem: {'intencao': 'listar', 'ferramenta': 'listar_arquivos', 'parametros': {'diretorio': 'meu desktop'}, 'confianca': 1.0, 'erro': None, 'sugestoes': ['mostre os arquivos do desktop', 'liste o conteúdo da pasta documentos']}
+2025-05-14 20:20:28,103 - agente - INFO - Escolhendo executor geral para tarefa não específica
+2025-05-14 20:20:30,136 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_202030.json'
+2025-05-14 20:21:38,562 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=llama-3.2-1b-instruct
+2025-05-14 20:21:38,590 - agente - INFO - Executor geral inicializado com sucesso
+2025-05-14 20:21:38,621 - agente - INFO - Executor de código inicializado com sucesso
+2025-05-14 20:21:38,621 - agente - INFO - Agente inicializado com modelos qwen3-4b e llama-3.2-1b-instruct
+2025-05-14 20:21:38,622 - __main__ - INFO - Agente inicializado com sucesso
+2025-05-14 20:24:00,172 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=llama-3.2-1b-instruct
+2025-05-14 20:24:00,206 - agente - INFO - Executor geral inicializado com sucesso
+2025-05-14 20:24:00,271 - agente - INFO - Executor de código inicializado com sucesso
+2025-05-14 20:24:00,277 - agente - INFO - Agente inicializado com modelos qwen3-4b e llama-3.2-1b-instruct
+2025-05-14 20:24:00,279 - __main__ - INFO - Agente inicializado com sucesso
+2025-05-14 20:24:05,347 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-0.6b, coder=llama-3.2-1b-instruct
+2025-05-14 20:24:05,364 - agente - INFO - Executor geral inicializado com sucesso
+2025-05-14 20:24:05,387 - agente - INFO - Executor de código inicializado com sucesso
+2025-05-14 20:24:05,387 - agente - INFO - Agente inicializado com modelos qwen3-0.6b e llama-3.2-1b-instruct
+2025-05-14 20:24:05,389 - __main__ - INFO - Agente inicializado com sucesso
+2025-05-14 20:26:35,270 - agente - INFO - Análise da mensagem: {'intencao': 'consulta', 'ferramenta': None, 'parametros': {}, 'confianca': 0.6000000000000001, 'erro': None, 'sugestoes': ['qual é a temperatura hoje?', 'que horas são?', 'qual é a data?']}
+2025-05-14 20:26:35,271 - agente - INFO - Iniciando nova conversa
+2025-05-14 20:26:37,347 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_202637.json'
+2025-05-14 20:28:54,465 - agente - INFO - Análise da mensagem: {'intencao': 'consulta', 'ferramenta': None, 'parametros': {}, 'confianca': 0.6000000000000001, 'erro': None, 'sugestoes': ['qual é a temperatura hoje?', 'que horas são?', 'qual é a data?']}
+2025-05-14 20:28:56,481 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_202856.json'
+2025-05-14 20:29:04,139 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_202904.json'
+2025-05-14 20:29:12,391 - agente - INFO - Histórico carregado com sucesso de 'historico\historico_20250514_201238.json'
+2025-05-14 20:29:15,025 - agente - INFO - Histórico carregado com sucesso de 'historico\historico_20250514_201300.json'
+2025-05-14 20:29:18,771 - agente - INFO - Histórico carregado com sucesso de 'historico\historico_20250514_202904.json'
+2025-05-14 20:39:38,086 - agente - INFO - Análise da mensagem: {'intencao': 'saudacao', 'ferramenta': None, 'parametros': {}, 'confianca': 0.5, 'erro': None, 'sugestoes': ['olá, tudo bem?', 'bom dia, como vai?']}
+2025-05-14 20:39:38,087 - agente - INFO - Escolhendo executor geral para tarefa não específica
+2025-05-14 20:39:40,107 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_203940.json'
+2025-05-14 20:52:20,747 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=llama-3.2-1b-instruct
+2025-05-14 20:52:20,793 - agente - INFO - Executor geral inicializado com sucesso
+2025-05-14 20:52:20,880 - agente - INFO - Executor de código inicializado com sucesso
+2025-05-14 20:52:20,880 - agente - INFO - Agente inicializado com modelos qwen3-4b e llama-3.2-1b-instruct
+2025-05-14 20:52:20,881 - __main__ - INFO - Agente inicializado com sucesso
+2025-05-14 20:52:27,109 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-0.6b, coder=llama-3.2-1b-instruct
+2025-05-14 20:52:27,130 - agente - INFO - Executor geral inicializado com sucesso
+2025-05-14 20:52:27,161 - agente - INFO - Executor de código inicializado com sucesso
+2025-05-14 20:52:27,162 - agente - INFO - Agente inicializado com modelos qwen3-0.6b e llama-3.2-1b-instruct
+2025-05-14 20:52:27,163 - __main__ - INFO - Agente inicializado com sucesso
+2025-05-14 20:52:43,692 - agente - INFO - Análise da mensagem: {'intencao': 'saudacao', 'ferramenta': None, 'parametros': {}, 'confianca': 0.5, 'erro': None, 'sugestoes': ['olá, tudo bem?', 'bom dia, como vai?']}
+2025-05-14 20:52:43,693 - agente - INFO - Iniciando nova conversa
+2025-05-14 20:52:43,693 - agente - INFO - Escolhendo executor geral para tarefa não específica
+2025-05-14 20:52:45,710 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_205245.json'
+2025-05-14 20:54:18,227 - __main__ - INFO - Tentando inicializar agente com modelos: geral=qwen3-4b, coder=llama-3.2-1b-instruct
+2025-05-14 20:54:18,254 - agente - INFO - Executor geral inicializado com sucesso
+2025-05-14 20:54:18,277 - agente - INFO - Executor de código inicializado com sucesso
+2025-05-14 20:54:18,277 - agente - INFO - Agente inicializado com modelos qwen3-4b e llama-3.2-1b-instruct
+2025-05-14 20:54:18,278 - __main__ - INFO - Agente inicializado com sucesso
+2025-05-14 20:54:26,664 - agente - INFO - Análise da mensagem: {'intencao': 'saudacao', 'ferramenta': None, 'parametros': {}, 'confianca': 0.5, 'erro': None, 'sugestoes': ['olá, tudo bem?', 'bom dia, como vai?']}
+2025-05-14 20:54:26,664 - agente - INFO - Iniciando nova conversa
+2025-05-14 20:54:26,665 - agente - INFO - Escolhendo executor geral para tarefa não específica
+2025-05-14 20:54:28,726 - agente - INFO - Histórico salvo com sucesso em 'historico\historico_20250514_205428.json'
+2025-05-14 20:55:34,409 - config - INFO - Configurações carregadas de config.json
+2025-05-14 20:55:34,410 - config - INFO - Diretório logs verificado/criado
+2025-05-14 20:55:34,411 - config - INFO - Diretório historico verificado/criado
+2025-05-14 20:55:34,412 - config - INFO - Diretório temp verificado/criado
+2025-05-14 20:55:34,413 - config - INFO - Todas as configurações validadas com sucesso

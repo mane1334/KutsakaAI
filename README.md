@@ -1,28 +1,71 @@
-# Agente IA - Assistente Virtual Inteligente
+# AgenteIA
 
-Um assistente virtual inteligente baseado em IA que pode ajudar com diversas tarefas usando ferramentas integradas.
+Um assistente virtual inteligente com múltiplas capacidades e ferramentas.
 
 ## Funcionalidades
 
-- Processamento de linguagem natural usando GPT-4
-- Pesquisa na web usando DuckDuckGo
-- Manipulação de arquivos e diretórios
-- Execução de comandos shell (com restrições de segurança)
-- Cálculos matemáticos
-- Sistema de histórico de conversas
-- Logs estruturados
+### 1. Processamento de Texto
+- Análise de sentimento
+- Geração de resumos
+- Classificação de texto
+- Extração de entidades
+- Verificação de plágio
 
-## Requisitos
+### 2. Manipulação de Dados
+- Conversão entre formatos (JSON, CSV, XML)
+- Validação de dados
+- Filtragem e ordenação
+- Agregação e estatísticas
+- Visualização de dados
 
-- Python 3.8+
-- Chave de API da OpenAI
+### 3. Segurança
+- Verificação de segurança de URLs
+- Sanitização de input
+- Validação de permissões
+- Criptografia de dados
+- Verificação de vulnerabilidades
+
+### 4. Otimização
+- Otimização de código
+- Análise de performance
+- Redução de complexidade
+- Melhoria de legibilidade
+- Refatoração de código
+
+### 5. Documentação
+- Geração de documentação
+- Extração de comentários
+- Validação de documentação
+- Atualização de docs
+- Geração de exemplos
+
+### 6. Integração
+- Verificação de APIs
+- Validação de webhooks
+- Teste de conexão
+- Monitoramento de serviços
+- Sincronização de dados
+
+### 7. Desenvolvimento
+- Geração de testes
+- Validação de código
+- Execução de testes
+- Geração de propriedades
+- Análise de complexidade
+
+### 8. Suporte
+- Geração de logs
+- Análise de erros
+- Monitoramento do sistema
+- Verificação de saúde
+- Limpeza de recursos
 
 ## Instalação
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/agente-ia.git
-cd agente-ia
+git clone https://github.com/seu-usuario/agenteia.git
+cd agenteia
 ```
 
 2. Instale as dependências:
@@ -30,74 +73,25 @@ cd agente-ia
 pip install -r requirements.txt
 ```
 
-3. Configure a chave da API:
+3. Configure as variáveis de ambiente:
 ```bash
-# Windows
-set OPENAI_API_KEY=sua-chave-aqui
-
-# Linux/Mac
-export OPENAI_API_KEY=sua-chave-aqui
+cp .env.example .env
+# Edite o arquivo .env com suas configurações
 ```
 
-Ou crie um arquivo `.env` na raiz do projeto:
-```
-OPENAI_API_KEY=sua-chave-aqui
+4. Execute o aplicativo:
+```bash
+streamlit run interface.py
 ```
 
 ## Uso
 
-```python
-from agente import AgenteIA
-
-# Inicializar o agente
-agente = AgenteIA()
-
-# Processar uma mensagem
-resposta = agente.processar_mensagem("Olá, como você está?")
-
-# Usar uma ferramenta específica
-resultado = agente.usar_ferramenta("pesquisar_web", query="Python programming")
-
-# Salvar histórico
-agente.salvar_historico("historico.json")
-
-# Carregar histórico
-agente.carregar_historico("historico.json")
-```
-
-## Ferramentas Disponíveis
-
-1. `pesquisar_web(query)`: Realiza pesquisas na web
-2. `listar_arquivos(diretorio)`: Lista arquivos e diretórios
-3. `ler_arquivo(caminho_arquivo)`: Lê conteúdo de arquivos
-4. `escrever_arquivo(caminho_arquivo, conteudo)`: Escreve em arquivos
-5. `executar_comando(comando)`: Executa comandos shell (com restrições)
-6. `calcular(expressao)`: Realiza cálculos matemáticos
-
-## Segurança
-
-- Validação de caminhos de arquivo
-- Limite de tamanho de arquivo (10MB)
-- Extensões de arquivo permitidas (.txt, .py, .json, .md)
-- Comandos shell restritos (ls, dir, echo)
-- Timeout em requisições web (30 segundos)
-
-## Logs
-
-Os logs são salvos em `agente.log` e incluem:
-- Inicialização do agente
-- Processamento de mensagens
-- Uso de ferramentas
-- Erros e exceções
+O AgenteIA pode ser usado através da interface web ou via API. Consulte a documentação para mais detalhes sobre cada funcionalidade.
 
 ## Contribuindo
 
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
-3. Commit suas mudanças (`git commit -am 'Adiciona nova feature'`)
-4. Push para a branch (`git push origin feature/nova-feature`)
-5. Crie um Pull Request
+Contribuições são bem-vindas! Por favor, leia o guia de contribuição antes de enviar um pull request.
 
 ## Licença
 
-Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICENSE) para detalhes. 
+Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE para mais detalhes. 
