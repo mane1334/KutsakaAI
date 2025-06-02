@@ -1,0 +1,32 @@
+{
+    "mcp": {
+        "max_tarefas_concorrentes": 10,
+        "intervalo_monitoramento": 60,
+        "relatorios_dir": "reports",
+        "historico_dir": "history",
+        "log_level": "INFO",
+        "retry": {
+            "max_tentativas": 3,
+            "intervalo_retry": 1
+        },
+        "monitoramento": {
+            "metricas": {
+                "cpu": true,
+                "memoria": true,
+                "disco": true,
+                "tempo_resposta": true
+            },
+            "max_metricas": 1000
+        },
+        "agentes": {
+            "selecao": {
+                "usar_especialidades": true,
+                "balancear_carga": true
+            }
+        },
+        "ferramentas": {
+            "timeout_padrao": 30,
+            "validar_antes_executar": true
+        }
+    }
+} 
