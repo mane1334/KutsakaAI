@@ -679,79 +679,120 @@ class AgenteIA:
             raise AgenteError(f"Falha ao processar mensagem: {str(e)}")
 
     def processar_mensagem_stream(self, mensagem: str, usar_coder: bool = None, perfil: str = None) -> Generator[str, None, None]:
-         """
-         Processa uma mensagem do usuário com streaming de tokens, aplicando a lógica de perfis.
+        """
+        Processa uma mensagem do usuário com streaming de tokens, aplicando RAG e lógica de seleção de modelo.
 
-         Args:
-             mensagem: Mensagem do usuário
-             usar_coder: Se deve usar o modelo coder (None para detecção automática)
-             perfil: O nome do perfil selecionado.
+        Args:
+            mensagem: Mensagem do usuário.
+            usar_coder: Se deve usar o modelo coder (None para detecção automática).
+            perfil: O nome do perfil selecionado (atualmente não usado diretamente aqui, mas pode ser para futuras parametrizações).
 
-         Yields:
-             Tokens da resposta do agente
-         """
-         # Esta implementação agora pode ser simplificada ou adaptada para usar os novos modelos separados.
-         # Por exemplo, se o modelo executor (Ollama) for usado para streaming de respostas gerais.
-         # A lógica de detecção de código e uso do modelo coder para GERAÇÃO de código já foi movida para processar_mensagem.
-         # Este método pode focar no streaming das respostas do llm_executor ou do resultado combinado.
+        Yields:
+            Tokens da resposta do agente.
+        """
+        self.logger.info(f"Iniciando processar_mensagem_stream para: '{mensagem[:50]}...'")
 
-         # Para manter compatibilidade com a interface que chama processar_mensagem_stream,
-         # podemos re-implementar a lógica de streaming aqui, talvez chamando self.agente_executor.stream() ou llm_executor.stream()
-         # dependendo do tipo de tarefa.
+        # 1. Determinar Target LLM
+        if usar_coder is None:
+            usar_coder = self._detectar_necessidade_codigo(mensagem)
+            self.logger.info(f"Detecção de necessidade de código: {usar_coder}")
 
-         # TODO: Adaptar este método para usar self.llm_executor ou self.agente_executor para streaming.
-         self.logger.warning("processar_mensagem_stream chamado. Adaptando para usar o agente executor para streaming.")
-         try:
-             # Obter configuração do perfil (ainda útil para system prompt e parâmetros)
-             perfil_config = obter_perfil(perfil) if perfil else obter_perfil("padrao")
+        selected_llm = None
+        if usar_coder and self.llm_coder:
+            selected_llm = self.llm_coder
+            self.logger.info("Usando llm_coder para streaming.")
+        elif self.llm_executor:
+            selected_llm = self.llm_executor
+            self.logger.info("Usando llm_executor para streaming.")
 
-             # Usar o agente executor para streaming
-             if self.agente_executor:
-                 input_data_executor = {
-                     "input": mensagem,
-                     # O AgentExecutor com memória já inclui o histórico automaticamente
-                     # "chat_history": [SystemMessage(content=perfil_config.instrucoes)], # System prompt pode ser incluído no template do agente
-                 }
+        if selected_llm is None:
+            error_msg = "Nenhum modelo LLM disponível para processar a mensagem."
+            self.logger.error(error_msg)
+            yield f"❌ Erro: {error_msg}"
+            return
 
-                 # TODO: Passar parâmetros do perfil para a chamada stream do agente executor
-                 model_kwargs = {}
-                 if perfil_config.temperatura is not None:
-                     model_kwargs['temperature'] = perfil_config.temperatura
-                 if perfil_config.top_p is not None:
-                     model_kwargs['top_p'] = perfil_config.top_p
-                 if perfil_config.stop is not None:
-                      model_kwargs['stop'] = perfil_config.stop
+        # 2. Preparar Prompt com RAG (if enabled)
+        final_prompt = mensagem
+        if CONFIG["rag"]["enabled"] and self.vector_store:
+            try:
+                self.logger.debug("RAG ativado. Buscando documentos relevantes...")
+                documentos_relevantes = self.vector_store.similarity_search(
+                    mensagem,
+                    k=CONFIG["rag"]["k_retrieval"]
+                )
+                if documentos_relevantes:
+                    context = "\n".join([doc.page_content for doc in documentos_relevantes])
+                    final_prompt = f"Contexto relevante:\n{context}\n\nPergunta: {mensagem}"
+                    self.logger.info(f"RAG: {len(documentos_relevantes)} documentos relevantes adicionados ao prompt.")
+                else:
+                    self.logger.info("RAG: Nenhum documento relevante encontrado.")
+            except Exception as e:
+                self.logger.error(f"Erro ao recuperar documentos relevantes do RAG: {e}")
+                # Continuar sem RAG em caso de erro, mas logar.
 
-                 # Iniciar streaming do agente executor
-                 for chunk in self.agente_executor.stream(input_data_executor, **model_kwargs):
-                     # A estrutura do chunk de um AgentExecutor.stream pode variar.
-                     # Precisamos extrair o token de saída corretamente.
-                     # Em alguns casos, pode ser chunk['output']. Em outros, pode ser necessário mais parsing.
-                     # Para AgentExecutor com ZERO_SHOT_REACT_DESCRIPTION, a saída final geralmente está em chunk.get('output').
-                     # Se estivermos streamando o LLM subjacente, será o token do LLM.
+        # 3. Stream LLM Response
+        full_response_content = []
+        try:
+            self.logger.debug(f"Iniciando streaming do LLM com o prompt: {final_prompt[:100]}...")
+            for chunk in selected_llm.stream(final_prompt):
+                # A estrutura do chunk pode variar. Para Langchain LLMs, é geralmente um objeto AIMessageChunk.
+                content_part = ""
+                if hasattr(chunk, 'content'): # Comum para AIMessageChunk
+                    content_part = chunk.content
+                elif isinstance(chunk, str): # Alguns LLMs podem retornar strings diretamente
+                    content_part = chunk
+                else:
+                    # Tentar converter para string como fallback, mas logar aviso
+                    self.logger.warning(f"Chunk de tipo inesperado recebido: {type(chunk)}. Tentando converter para str.")
+                    content_part = str(chunk)
 
-                     # Se o chunk tiver 'output', é provavelmente a resposta final ou um passo intermediário formatado.
-                     # Para streaming de tokens do LLM, precisamos de um callback ou de uma chain que streame o LLM subjacente.
+                if content_part:
+                    yield content_part
+                    full_response_content.append(content_part)
+            self.logger.info("Streaming do LLM concluído.")
 
-                     # Simplificação: Se o chunk tiver 'output', yield it. Se for um passo intermediário, pode precisar de formatação.
-                     # Uma forma comum é streamar o LLM subjacente após a decisão da ferramenta ou quando não há ferramenta.
+        except Exception as e:
+            error_msg = f"Erro durante o streaming da resposta do LLM: {e}"
+            self.logger.error(error_msg)
+            yield f"❌ Erro: {error_msg}"
+            # Não atualizar histórico se o stream falhou no meio.
+            return
 
-                     # Adaptando para yieldar o output se existir, ou o token do LLM se estiver streamando o LLM
-                     # (Isso pode requerer inspeção mais profunda do objeto chunk/evento) -- simplificando por enquanto
-                     if isinstance(chunk, dict) and 'output' in chunk:
-                          yield chunk['output']
-                     # else: # Se não for output final, pode ser um passo intermediário (ex: tool thoughts) - decidir se quer streamar isso.
-                     #    yield str(chunk) # Opcional: streamar passos intermediários
+        # 4. Update History (apenas se o stream foi bem-sucedido)
+        final_assistant_response = "".join(full_response_content)
+        if not final_assistant_response and not full_response_content: # Verifica se algo foi gerado
+             self.logger.warning("Nenhum conteúdo foi gerado pelo LLM.")
+             # Pode-se optar por não adicionar ao histórico ou adicionar uma mensagem de "sem resposta"
+             # Por ora, não adicionaremos nada se a resposta for vazia.
+             return
 
-                 # TODO: Lidar com o caso onde processar_mensagem_stream é chamado para gerar código (não deveria acontecer com a nova lógica em processar_mensagem)
+        user_message = {
+            "id": str(uuid.uuid4()),
+            "role": "user",
+            "content": mensagem, # Mensagem original, não o final_prompt com RAG
+            "timestamp": datetime.now().isoformat()
+        }
+        assistant_message = {
+            "id": str(uuid.uuid4()),
+            "role": "assistant",
+            "content": final_assistant_response,
+            "timestamp": datetime.now().isoformat()
+        }
 
-             else:
-                 self.logger.warning("Agente Executor não disponível para streaming.")
-                 yield "Nenhum modelo executor disponível para streaming."
+        self.historico.append(user_message)
+        self.historico.append(assistant_message)
+        self.logger.info("Histórico atualizado com a mensagem do usuário e a resposta do assistente.")
 
-         except Exception as e:
-             self.logger.error(f"Erro durante streaming com Agente Executor: {e}")
-             yield f"❌ Erro durante streaming: {e}"
+        if CONFIG["auto_improve"]["index_feedback"]:
+            try:
+                self._add_message_to_vector_store(user_message)
+                self._add_message_to_vector_store(assistant_message)
+                self.logger.info("Mensagens adicionadas ao vector store para auto-aperfeiçoamento.")
+            except Exception as e:
+                self.logger.error(f"Erro ao adicionar mensagens ao vector store: {e}")
+
+        # Opcional: Salvar histórico automaticamente aqui, se desejado.
+        # self.salvar_historico()
     
     def salvar_historico(self, arquivo: str = None) -> bool:
         """

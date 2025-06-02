@@ -1,6 +1,7 @@
 from flask import Flask, render_template, jsonify, request, send_file
-from agente import AgenteIA
-import agenteia.config as config
+from agenteia.core.agente import AgenteIA
+from agenteia.core.config import CONFIG
+import asyncio
 import threading
 import queue
 import io
@@ -17,40 +18,55 @@ modelo_status = {
 }
 historico = []
 
-def inicializar_agente(modelo_geral, modelo_coder):
-    global agente
+def inicializar_agente():
+    global agente, modelo_status
     try:
-        agente = AgenteIA(modelo_geral=modelo_geral, modelo_coder=modelo_coder)
-        modelo_status["geral"] = modelo_geral
-        modelo_status["coder"] = modelo_coder
+        usar_openrouter = CONFIG.get("openrouter", {}).get("enabled", False)
+        agente = AgenteIA(mcp_client=None, usar_openrouter=usar_openrouter, config=CONFIG)
+
+        agent_status_details = agente.obter_status_agente()
+        if agent_status_details.get("status") == "ativo":
+            modelo_status["geral"] = agent_status_details.get("modelo_principal", "Configurado via CONFIG")
+            modelo_status["coder"] = agent_status_details.get("modelo_coder", "Configurado via CONFIG")
+            if usar_openrouter:
+                modelo_status["geral"] = CONFIG.get("openrouter", {}).get("modelo_geral", modelo_status["geral"])
+                modelo_status["coder"] = CONFIG.get("openrouter", {}).get("modelo_coder", modelo_status["coder"])
+            elif CONFIG.get("llm", {}).get("provider") == "ollama":
+                 modelo_status["geral"] = CONFIG.get("llm", {}).get("model", modelo_status["geral"])
+                 modelo_status["coder"] = CONFIG.get("llm", {}).get("model", modelo_status["coder"])
+        else:
+            modelo_status["geral"] = "Erro na ativação do agente"
+            modelo_status["coder"] = "Erro na ativação do agente"
+        print(f"Agente inicializado. Status: {modelo_status}")
         return True
     except Exception as e:
         print(f"Erro ao inicializar agente: {str(e)}")
+        modelo_status["geral"] = "Falha crítica na inicialização"
+        modelo_status["coder"] = "Falha crítica na inicialização"
         return False
 
 @app.route('/')
 def home():
-    return render_template('index.html', modelos=config.AVAILABLE_MODELS)
+    return render_template('index.html', modelos_disponiveis=CONFIG.get("available_models", {}))
 
 @app.route('/carregar_ia', methods=['POST'])
 def carregar_ia():
-    data = request.get_json()
-    modelo_geral = config.AVAILABLE_MODELS[int(data['modelo_geral'])]
-    modelo_coder = config.AVAILABLE_MODELS[int(data['modelo_coder'])]
-    
-    if inicializar_agente(modelo_geral, modelo_coder):
+    if inicializar_agente():
         return jsonify({
             "status": "success",
-            "message": "IA carregada com sucesso!",
+            "message": "IA carregada com sucesso com base na configuração!",
             "modelos": modelo_status
         })
     return jsonify({
         "status": "error",
-        "message": "Erro ao carregar IA"
+        "message": "Erro ao carregar IA. Verifique os logs do servidor."
     })
 
 @app.route('/status')
 def get_status():
+    if agente:
+        status_agente_detalhado = agente.obter_status_agente()
+        return jsonify({**modelo_status, "status_agente_detalhado": status_agente_detalhado})
     return jsonify(modelo_status)
 
 @app.route('/upload_arquivo', methods=['POST'])
@@ -60,54 +76,62 @@ def upload_arquivo():
     arquivo = request.files['arquivo']
     if arquivo.filename == '':
         return jsonify({"status": "error", "message": "Arquivo vazio."})
-    
+
+    if agente is None:
+        return jsonify({"status": "error", "message": "IA não carregada. Por favor, carregue a IA primeiro."})
+
     try:
         filename = secure_filename(arquivo.filename)
-        caminho = os.path.join('temp', filename)
+        caminho_temporario = os.path.join('temp', filename)
         os.makedirs('temp', exist_ok=True)
-        arquivo.save(caminho)
-        
-        if agente is None:
-            return jsonify({"status": "error", "message": "IA não carregada."})
-        
-        resposta = agente.processar_arquivo(caminho)
-        historico.append({"remetente": "Sistema", "mensagem": f"Arquivo '{filename}' processado"})
-        historico.append({"remetente": "Agente", "mensagem": resposta})
-        
-        # Limpar arquivo temporário
+        arquivo.save(caminho_temporario)
+
+        with open(caminho_temporario, 'r', encoding='utf-8') as f:
+            file_content = f.read()
+
+        prompt_com_conteudo_arquivo = f"Analise o seguinte conteúdo do arquivo '{filename}':\n\n{file_content}"
+
+        resposta_agente = asyncio.run(agente.processar_mensagem(prompt_com_conteudo_arquivo))
+
+        resposta_texto = str(resposta_agente)
+
+        historico.append({"remetente": "Sistema", "mensagem": f"Arquivo '{filename}' processado."})
+        historico.append({"remetente": "Agente", "mensagem": resposta_texto})
+
         try:
-            os.remove(caminho)
-        except:
-            pass
-            
-        return jsonify({"status": "success", "message": resposta})
+            os.remove(caminho_temporario)
+        except Exception as e:
+            print(f"Aviso: Não foi possível remover o arquivo temporário {caminho_temporario}: {e}")
+
+        return jsonify({"status": "success", "message": resposta_texto})
     except Exception as e:
-        return jsonify({"status": "error", "message": str(e)})
+        print(f"Erro em /upload_arquivo: {e}")
+        return jsonify({"status": "error", "message": f"Erro ao processar arquivo: {str(e)}"})
 
 @app.route('/enviar_mensagem', methods=['POST'])
 def enviar_mensagem():
     global agente
     if agente is None:
-        return jsonify({"status": "error", "message": "IA não carregada."})
+        return jsonify({"status": "error", "message": "IA não carregada. Por favor, carregue a IA primeiro."})
+
     data = request.get_json()
     mensagem = data.get('mensagem', '')
-    temperatura = data.get('temperatura')
-    top_p = data.get('top_p')
     perfil = data.get('perfil')
+
     if not mensagem:
         return jsonify({"status": "error", "message": "Mensagem vazia."})
+
     try:
-        resposta = agente.processar_mensagem(
-            mensagem, 
-            temperatura=temperatura,
-            top_p=top_p,
-            perfil=perfil
-        )
+        resposta_agente = asyncio.run(agente.processar_mensagem(mensagem, perfil=perfil))
+
+        resposta_texto = str(resposta_agente)
+
         historico.append({"remetente": "Você", "mensagem": mensagem})
-        historico.append({"remetente": "Agente", "mensagem": resposta})
-        return jsonify({"status": "success", "resposta": resposta})
+        historico.append({"remetente": "Agente", "mensagem": resposta_texto})
+        return jsonify({"status": "success", "resposta": resposta_texto})
     except Exception as e:
-        return jsonify({"status": "error", "message": str(e)})
+        print(f"Erro em /enviar_mensagem: {e}")
+        return jsonify({"status": "error", "message": f"Erro ao processar mensagem: {str(e)}"})
 
 @app.route('/historico')
 def get_historico():
@@ -117,7 +141,8 @@ def get_historico():
 def limpar_historico():
     historico.clear()
     if agente:
-        agente.limpar_historico()
+        if hasattr(agente, 'limpar_historico') and callable(getattr(agente, 'limpar_historico')):
+            agente.limpar_historico()
     return jsonify({"status": "success"})
 
 @app.route('/download_historico/<tipo>')
@@ -142,4 +167,5 @@ def download_historico(tipo):
         return "Tipo não suportado", 400
 
 if __name__ == '__main__':
-    app.run(debug=True) 
+    os.makedirs('temp', exist_ok=True)
+    app.run(debug=True)

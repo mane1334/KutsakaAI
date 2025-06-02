@@ -106,39 +106,50 @@ def exibir_menu():
         # Status do Sistema
         st.header("💻 Status do Sistema")
         try:
-            # Obter status do agente (inclui provedores e métricas do sistema via MCP)
-            agente_status = st.session_state.agente_ia.obter_status_agente()
-            status_geral = st.session_state.mcp_client.obter_status() # Ainda precisamos das métricas de CPU/Memória/Disco do MCP
+            if 'agente_ia' in st.session_state and st.session_state.agente_ia is not None:
+                agente_status = st.session_state.agente_ia.obter_status_agente()
 
-            # Exibir status baseado no provedor ativo
-            provedor_ativo = agente_status.get("provedor_ativo", "desconhecido")
-
-            if provedor_ativo == "openrouter":
-                openrouter_status = agente_status.get("openrouter", {})
-                st.markdown("**Provedor Ativo:** OpenRouter")
-                st.markdown(f"- Modelo (Geral): {agente_status.get('openrouter', {}).get('modelo_geral', 'N/A')}") # TODO: Obter o modelo correto do OpenRouter se estiver usando o coder
-                st.markdown(f"- Status da API: {'🟢 Online' if openrouter_status.get('online', False) else '🔴 Offline'}")
-                st.markdown(f"  Mensagem: {openrouter_status.get('message', 'N/A')}")
-                if openrouter_status.get('online', False):
-                     st.markdown(f"  Modelos disponíveis: {openrouter_status.get('model_count', 'N/A')}")
-
-            else: # Assume Ollama como padrão se não for OpenRouter
-                ollama_status = agente_status.get("ollama", {})
-                st.markdown("**Provedor Ativo:** Ollama")
-                st.markdown(f"- Modelo (Executor): {agente_status.get('ollama', {}).get('model', 'N/A')}") # TODO: Obter o modelo correto do Ollama se estiver usando o coder
+                # --- Ollama (Executor) Status ---
+                st.subheader("🔌 Provedor Executor: Ollama")
+                ollama_status = agente_status.get('ollama', {})
+                st.markdown(f"- **Modelo Executor:** {ollama_status.get('loaded_model', 'N/A')}")
                 st.markdown(f"- Servidor Ollama: {'🟢 Online' if ollama_status.get('online', False) else '🔴 Offline'}")
                 if ollama_status.get('online', False):
-                     modelos_str = ", ".join(ollama_status.get('modelos_disponiveis', ['N/A']))
-                     st.markdown(f"  Modelos disponíveis: {modelos_str}")
+                    modelos_ollama_str = ", ".join(ollama_status.get('modelos_disponiveis', ['N/A']))
+                    st.markdown(f"  - Modelos disponíveis: {modelos_ollama_str}")
 
-            # Ainda podemos mostrar métricas de sistema se disponíveis, que vêm do status geral do MCP
-            st.markdown("--- # Métricas do Sistema # ---")
-            st.markdown(f"- CPU: {status_geral.get('cpu_uso', 'N/A')}% ")
-            st.markdown(f"- Memória: {status_geral.get('memoria_uso', 'N/A')}% ")
-            st.markdown(f"- Disco: {status_geral.get('disco_uso', 'N/A')}% ")
+                st.markdown("---") # Separator
 
+                # --- OpenRouter (Coder) Status ---
+                st.subheader("☁️ Provedor Coder: OpenRouter")
+                openrouter_config_status = st.session_state.agente_ia.config.get('openrouter', {}).get('enabled', False)
+                openrouter_api_status = agente_status.get('openrouter', {}) # Status da API do OpenRouter
+                loaded_coder_model_name = agente_status.get('loaded_coder_model', 'N/A')
+
+                st.markdown(f"- **Modelo Coder:** {loaded_coder_model_name}")
+                st.markdown(f"- OpenRouter Habilitado (Config): {'✅ Sim' if openrouter_config_status else '❌ Não'}")
+                st.markdown(f"- Status da API OpenRouter: {'🟢 Online' if openrouter_api_status.get('online', False) else '🔴 Offline'}")
+                st.markdown(f"  - Mensagem: {openrouter_api_status.get('message', 'N/A')}")
+                if openrouter_api_status.get('online', False):
+                    st.markdown(f"  - Modelos disponíveis (OpenRouter): {openrouter_api_status.get('model_count', 'N/A')}")
+
+                st.markdown("---") # Separator
+            else:
+                st.warning("Agente IA não inicializado. Status indisponível.")
+
+            # Métricas do Sistema (do MCP Server, se houver)
+            # Esta parte pode permanecer se as métricas do MCP são distintas das do agente
+            if 'mcp_client' in st.session_state and st.session_state.mcp_client is not None:
+                status_geral_mcp = st.session_state.mcp_client.obter_status()
+                st.subheader("⚙️ Métricas do Sistema (MCP)")
+                st.markdown(f"- CPU: {status_geral_mcp.get('cpu_uso', 'N/A')}%")
+                st.markdown(f"- Memória: {status_geral_mcp.get('memoria_uso', 'N/A')}%")
+                st.markdown(f"- Disco: {status_geral_mcp.get('disco_uso', 'N/A')}%")
+
+        except AttributeError:
+             st.warning("Agente IA ou seus componentes ainda não estão totalmente inicializados. Status parcial pode ser exibido.")
         except Exception as e:
-            st.error(f"❌ Erro ao obter status: {e}")
+            st.error(f"❌ Erro ao obter status do sistema: {e}")
 
 # Interface principal
 def main():
