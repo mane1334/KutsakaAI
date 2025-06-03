@@ -1,44 +1,31 @@
 import OpenAI from 'openai'; // Using the OpenAI SDK as OpenRouter is compatible
 import { ILLMAdapter, ChatRequest, ChatResponse, APIError, LLMTokens } from './ILLMAdapter';
-// import { ChatRequestSchema } from '../validation/requestSchema'; // For validating request (optional here)
+import { LLM_ERRORS, getLLMError } from '../errors/llmErrors'; // Import catalog
 
-// Placeholder for OpenRouter pricing.
-// Keys should ideally match the model strings returned by OpenRouter (e.g., "openai/gpt-3.5-turbo").
-// Prices are per token. Note: OpenRouter's actual pricing can be complex and dynamic.
-// These are simplified examples and might need adjustment based on real-time data or a dedicated pricing service.
 const OPENROUTER_PRICING: Record<string, { prompt: number; completion: number; currency?: string }> = {
-  'openai/gpt-3.5-turbo': { prompt: 0.0000005, completion: 0.0000015 }, // Example: $0.0005/1K prompt, $0.0015/1K completion
-  'openai/gpt-4': { prompt: 0.00003, completion: 0.00006 },         // Example: $0.03/1K prompt, $0.06/1K completion
-  'openai/gpt-4-turbo-preview': { prompt: 0.00001, completion: 0.00003 }, // Example: $0.01/1K prompt, $0.03/1K completion
-  'anthropic/claude-2': { prompt: 0.000008, completion: 0.000024 },   // Example: $0.008/1K prompt, $0.024/1K completion
-  'anthropic/claude-3-opus': { prompt: 0.000015, completion: 0.000075 }, // Example: $0.015/1K prompt, $0.075/1K completion
-  'anthropic/claude-3-sonnet': { prompt: 0.000003, completion: 0.000015 }, // Example: $0.003/1K prompt, $0.015/1K completion
-  'google/gemini-pro': { prompt: 0.000000125, completion: 0.000000375 }, // Example pricing for Gemini Pro
-  'mistralai/mistral-7b': { prompt: 0.00000025, completion: 0.00000025 }, // Example
-  'mistralai/mixtral-8x7b': { prompt: 0.0000007, completion: 0.0000007 }, // Example
-  'openrouter/auto': { prompt: 0.000001, completion: 0.000002 }, // A generic fallback if model is 'auto' or for unknown routed models
-  'default': { prompt: 0.000001, completion: 0.000002 }, // Default fallback for unknown models
+  'openai/gpt-3.5-turbo': { prompt: 0.0000005, completion: 0.0000015 },
+  'openai/gpt-4': { prompt: 0.00003, completion: 0.00006 },
+  'openai/gpt-4-turbo-preview': { prompt: 0.00001, completion: 0.00003 },
+  'anthropic/claude-2': { prompt: 0.000008, completion: 0.000024 },
+  'anthropic/claude-3-opus': { prompt: 0.000015, completion: 0.000075 },
+  'anthropic/claude-3-sonnet': { prompt: 0.000003, completion: 0.000015 },
+  'google/gemini-pro': { prompt: 0.000000125, completion: 0.000000375 },
+  'mistralai/mistral-7b': { prompt: 0.00000025, completion: 0.00000025 },
+  'mistralai/mixtral-8x7b': { prompt: 0.0000007, completion: 0.0000007 },
+  'openrouter/auto': { prompt: 0.000001, completion: 0.000002 },
+  'default': { prompt: 0.000001, completion: 0.000002 },
 };
 
-// Helper function to calculate cost for OpenRouter models
 function calculateOpenRouterCost(model: string, tokens: LLMTokens | undefined): number | undefined {
   if (!tokens || tokens.prompt_tokens === undefined || tokens.completion_tokens === undefined) {
     return undefined;
   }
-
-  // OpenRouter model names are usually like "vendor/model-name" or "vendor/model-name:version"
-  // We use the model string directly as returned by the API for lookup.
-  // If it contains a version (e.g., :xxxx), try stripping it for a more general match if the specific version isn't found.
   let pricingKey = model;
   if (!OPENROUTER_PRICING[pricingKey] && pricingKey.includes(':')) {
     pricingKey = pricingKey.substring(0, pricingKey.indexOf(':'));
   }
-
   const pricing = OPENROUTER_PRICING[pricingKey] || OPENROUTER_PRICING[model] || OPENROUTER_PRICING['default'];
-
   const cost = (tokens.prompt_tokens * pricing.prompt) + (tokens.completion_tokens * pricing.completion);
-  // OpenRouter costs can be very small and might require more precision.
-  // Their dashboard often shows costs up to 10 decimal places.
   return parseFloat(cost.toFixed(10));
 }
 
@@ -67,7 +54,6 @@ export class OpenRouterAdapter implements ILLMAdapter {
   async chatCompletion(request: ChatRequest): Promise<ChatResponse> {
     console.log('OpenRouterAdapter: chatCompletion called with:', request);
     try {
-      // Determine the model to request. OpenRouter uses 'vendor/model' slugs or 'openrouter/auto'.
       const requestedModel = request.model || 'openrouter/auto';
 
       const completion = await this.client.chat.completions.create({
@@ -77,7 +63,6 @@ export class OpenRouterAdapter implements ILLMAdapter {
         temperature: request.temperature,
         top_p: request.top_p,
         stream: request.stream,
-        // extra_body: { /* for transforms like moderation if applicable */ }
       });
 
       const responseTokens: LLMTokens | undefined = completion.usage ? {
@@ -86,14 +71,13 @@ export class OpenRouterAdapter implements ILLMAdapter {
         total_tokens: completion.usage.total_tokens,
       } : undefined;
 
-      // Use the model string returned by OpenRouter in completion.model for cost calculation
       const cost = calculateOpenRouterCost(completion.model, responseTokens);
 
       return {
         id: completion.id,
         object: completion.object,
         created: completion.created,
-        model: completion.model, // This is the actual model string from OpenRouter's response
+        model: completion.model,
         choices: completion.choices.map(choice => ({
           index: choice.index,
           message: {
@@ -112,16 +96,47 @@ export class OpenRouterAdapter implements ILLMAdapter {
 
   handleError(error: unknown): APIError {
     console.error('OpenRouterAdapter: handleError called with:', error);
-    if (error instanceof OpenAI.APIError) {
-      return {
-        code: error.status || 500,
-        message: error.message,
-        type: error.type,
-        param: error.param,
-      };
+    if (error instanceof OpenAI.APIError) { // OpenRouter uses OpenAI-compatible error structures
+      switch (error.status) {
+        case 401: // Unauthorized
+          return { ...getLLMError('AUTHENTICATION_ERROR'), details: error.message, type: error.type, param: error.param };
+        case 429: // Rate limit
+          return { ...getLLMError('RATE_LIMIT'), details: error.message, type: error.type, param: error.param };
+        case 403: // Forbidden - often quota issues or access permissions on OpenRouter
+           if (error.message && error.message.toLowerCase().includes('quota')) {
+             return { ...getLLMError('PROVIDER_ERROR'), response: "Quota exceeded. Please check your OpenRouter account.", details: error.message, type: error.type, param: error.param };
+           }
+           // Could be a more general permission issue not necessarily auth key related
+           return { ...getLLMError('PROVIDER_ERROR'), response: "Access forbidden by OpenRouter.", details: error.message, type: error.type, param: error.param };
+        case 400: // Bad Request - could be various issues
+           if (error.message && error.message.toLowerCase().includes('moderation')) {
+             return { ...getLLMError('CONTENT_MODERATION'), details: error.message, type: error.type, param: error.param };
+           }
+           // For other 400 errors on OpenRouter
+           return {
+             code: error.status,
+             message: `OpenRouter Bad Request: ${error.message}`,
+             type: error.type,
+             param: error.param,
+             details: error.error?.toString() || "Invalid request to OpenRouter."
+           };
+        // Check for 451 if OpenRouter uses it for content moderation as per earlier thoughts
+        // case 451:
+        //   return { ...getLLMError('CONTENT_MODERATION'), details: error.message, type: error.type, param: error.param };
+        default:
+          // For other OpenRouter API errors
+          return {
+            ...getLLMError('PROVIDER_ERROR'),
+            code: error.status || 500,
+            message: error.message,
+            type: error.type,
+            param: error.param,
+            details: `Unhandled OpenRouter API error. Status: ${error.status}`
+          };
+      }
     } else if (error instanceof Error) {
-      return { code: 500, message: error.message };
+      return { ...getLLMError('INTERNAL_SERVER_ERROR'), details: error.message, message: error.message };
     }
-    return { code: 500, message: 'An unknown error occurred in OpenRouterAdapter' };
+    return { ...getLLMError('INTERNAL_SERVER_ERROR'), details: 'An unknown error occurred in OpenRouterAdapter' };
   }
 }
