@@ -8,7 +8,7 @@ from typing import Dict, List, Optional, Any
 from bs4 import BeautifulSoup # Manter caso outras funções o usem
 from duckduckgo_search import DDGS
 from ..exceptions import WebError
-from ...logs import setup_logging
+from ..logs import setup_logging
 from ..mcp_client import MCPClient # Importar MCPClient
 from pydantic import BaseModel, Field # Importar BaseModel e Field para PesquisarWebArgs
 
