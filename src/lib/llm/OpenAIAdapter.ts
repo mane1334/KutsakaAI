@@ -1,6 +1,6 @@
 import OpenAI from 'openai';
 import { ILLMAdapter, ChatRequest, ChatResponse, APIError, LLMTokens } from './ILLMAdapter';
-// import { ChatRequestSchema } from '../validation/requestSchema'; // For validating request (optional here)
+import { LLM_ERRORS, getLLMError } from '../errors/llmErrors'; // Import catalog
 
 // Placeholder for a more sophisticated pricing model/service
 const OPENAI_PRICING: Record<string, { prompt: number; completion: number }> = {
@@ -16,16 +16,14 @@ function calculateCost(model: string, tokens: LLMTokens | undefined): number | u
     return undefined;
   }
 
-  // Normalize model name: sometimes models are returned with version/date suffixes by the API
   let baseModel = model.toLowerCase();
   if (baseModel.startsWith('gpt-3.5-turbo-')) baseModel = 'gpt-3.5-turbo';
-  if (baseModel.startsWith('gpt-4-') && baseModel.includes('-preview')) baseModel = 'gpt-4-turbo-preview'; // Or a more general gpt-4 mapping
+  if (baseModel.startsWith('gpt-4-') && baseModel.includes('-preview')) baseModel = 'gpt-4-turbo-preview';
   else if (baseModel.startsWith('gpt-4-')) baseModel = 'gpt-4';
-
 
   const pricing = OPENAI_PRICING[baseModel] || OPENAI_PRICING['default'];
   const cost = (tokens.prompt_tokens * pricing.prompt) + (tokens.completion_tokens * pricing.completion);
-  return parseFloat(cost.toFixed(6)); // Return cost with a fixed number of decimal places
+  return parseFloat(cost.toFixed(6));
 }
 
 export class OpenAIAdapter implements ILLMAdapter {
@@ -44,18 +42,15 @@ export class OpenAIAdapter implements ILLMAdapter {
   async chatCompletion(request: ChatRequest): Promise<ChatResponse> {
     console.log('OpenAIAdapter: chatCompletion called with:', request);
     try {
-      // Use the model from the request, or default if not provided.
-      // The actual model used by OpenAI API will be in `completion.model`
       const requestedModel = request.model || 'gpt-3.5-turbo';
 
       const completion = await this.client.chat.completions.create({
         model: requestedModel,
-        messages: request.messages as any, // Cast if necessary
+        messages: request.messages as any,
         max_tokens: request.max_tokens,
         temperature: request.temperature,
         top_p: request.top_p,
         stream: request.stream,
-        // extra_body: { /* ... */ }
       });
 
       const responseTokens: LLMTokens | undefined = completion.usage ? {
@@ -64,15 +59,13 @@ export class OpenAIAdapter implements ILLMAdapter {
         total_tokens: completion.usage.total_tokens,
       } : undefined;
 
-      // Use the model string returned by OpenAI in `completion.model` for cost calculation,
-      // as it's the ground truth of what was actually used.
       const cost = calculateCost(completion.model, responseTokens);
 
       return {
         id: completion.id,
         object: completion.object,
         created: completion.created,
-        model: completion.model, // This is the model string returned by OpenAI
+        model: completion.model,
         choices: completion.choices.map(choice => ({
           index: choice.index,
           message: {
@@ -92,15 +85,44 @@ export class OpenAIAdapter implements ILLMAdapter {
   handleError(error: unknown): APIError {
     console.error('OpenAIAdapter: handleError called with:', error);
     if (error instanceof OpenAI.APIError) {
-      return {
-        code: error.status || 500,
-        message: error.message,
-        type: error.type,
-        param: error.param,
-      };
+      switch (error.status) {
+        case 401: // Unauthorized
+          return { ...getLLMError('AUTHENTICATION_ERROR'), details: error.message, type: error.type, param: error.param };
+        case 429: // Rate limit or engine overload
+          return { ...getLLMError('RATE_LIMIT'), details: error.message, type: error.type, param: error.param };
+        case 400: // Bad Request
+          // OpenAI uses error.code 'billing_hard_limit_reached' for quota issues under a 400 status for some APIs,
+          // or error.type 'invalid_request_error' for moderation issues.
+          if (error.code === 'billing_hard_limit_reached') {
+             return { ...getLLMError('PROVIDER_ERROR'), response: "OpenAI quota exceeded.", details: error.message, type: error.type, param: error.param };
+          }
+          if (error.message && error.message.toLowerCase().includes('moderation')) { // Check message for moderation
+             return { ...getLLMError('CONTENT_MODERATION'), details: error.message, type: error.type, param: error.param };
+          }
+          // For other 400 errors, return more generic info or specific if identifiable
+          return {
+            code: error.status,
+            message: `OpenAI Bad Request: ${error.message}`,
+            type: error.type,
+            param: error.param,
+            details: error.error?.toString() || "Invalid request structure or parameters."
+          };
+        default:
+          // For other OpenAI API errors, use PROVIDER_ERROR or a more generic one
+          return {
+            ...getLLMError('PROVIDER_ERROR'), // Default to provider error for unhandled API errors
+            code: error.status || 500, // Ensure code from error is used if available
+            message: error.message, // Original message from OpenAI
+            type: error.type,
+            param: error.param,
+            details: `Unhandled OpenAI API error. Status: ${error.status}`
+          };
+      }
     } else if (error instanceof Error) {
-      return { code: 500, message: error.message };
+      // Generic JavaScript error
+      return { ...getLLMError('INTERNAL_SERVER_ERROR'), details: error.message, message: error.message };
     }
-    return { code: 500, message: 'An unknown error occurred in OpenAIAdapter' };
+    // Fallback for unknown errors
+    return { ...getLLMError('INTERNAL_SERVER_ERROR'), details: 'An unknown error occurred in OpenAIAdapter' };
   }
 }

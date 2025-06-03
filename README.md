@@ -1,4 +1,5 @@
-# AgenteIA
+# KutsakaAI Multi-Provider Project
+Version: 1.0.2-beta
 
 Um assistente virtual inteligente com múltiplas capacidades e ferramentas.
 
@@ -60,6 +61,21 @@ Um assistente virtual inteligente com múltiplas capacidades e ferramentas.
 - Verificação de saúde
 - Limpeza de recursos
 
+## 🔌 OpenRouter Setup
+1. Get key: https://openrouter.ai/keys
+2. `.env`:
+```env
+AI_PROVIDER="openrouter"
+OPENROUTER_API_KEY="sk-or-..."
+HTTP_REFERER="https://seu-site.com"
+X_TITLE="Seu App Name" # Optional: Sets X-Title header for OpenRouter
+```
+
+## 🛡️ Políticas de Segurança
+- All inputs validated (Zod)
+- Content moderation ON (Conceptual: Requires provider-specific implementation, e.g., via OpenRouter `transforms` or OpenAI Moderation API)
+- Auto-key rotation (cron/daily) (Operational Note: This is an infrastructure task, not implemented in the application code itself but a recommended practice.)
+
 ## Instalação
 
 1. Clone o repositório:
@@ -94,4 +110,4 @@ Contribuições são bem-vindas! Por favor, leia o guia de contribuição antes 
 
 ## Licença
 
-Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE para mais detalhes. 
+Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE para mais detalhes.
