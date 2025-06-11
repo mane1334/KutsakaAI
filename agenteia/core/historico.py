@@ -6,11 +6,11 @@ import os
 import json
 from datetime import datetime
 from typing import List, Dict, Any, Optional
-from ..logs import setup_logging
+from .logs import setup_logging
 from .exceptions import HistoryError
 import uuid
 
-logger = setup_logging(__name__, 'historico.log')
+logger = setup_logging(__name__)
 
 class HistoricoManager:
     """Gerencia o histórico de conversas do agente."""

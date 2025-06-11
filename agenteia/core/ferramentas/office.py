@@ -15,11 +15,11 @@ try:
 except ImportError:
     logging.warning("Bibliotecas do Office não encontradas. Algumas funcionalidades estarão indisponíveis.")
 
-from ...logs import setup_logging
+from ...core.logs import setup_logging
 from ..exceptions import ToolError, FileError
 
 # Configurar logger
-logger = setup_logging(__name__, 'office.log')
+logger = setup_logging(__name__)
 
 def criar_word(caminho_arquivo: str, texto: str,
     mcp_client: Optional[Any] = None

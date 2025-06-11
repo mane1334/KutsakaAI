@@ -8,11 +8,11 @@ from typing import Dict, List, Optional, Any
 from bs4 import BeautifulSoup # Manter caso outras funções o usem
 from duckduckgo_search import DDGS
 from ..exceptions import WebError
-from ..logs import setup_logging
+from ...core.logs import setup_logging
 from ..mcp_client import MCPClient # Importar MCPClient
 from pydantic import BaseModel, Field # Importar BaseModel e Field para PesquisarWebArgs
 
-logger = setup_logging(__name__, 'web.log')
+logger = setup_logging(__name__)
 
 # Definir o esquema de argumentos para a ferramenta pesquisar_web
 class PesquisarWebArgs(BaseModel):

@@ -13,9 +13,9 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from ..exceptions import ToolError
-from ...logs import setup_logging
+from ...core.logs import setup_logging
 
-logger = setup_logging(__name__, 'utils.log')
+logger = setup_logging(__name__)
 
 def calcular(expressao: str) -> str:
     """
