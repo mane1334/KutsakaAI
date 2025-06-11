@@ -10,7 +10,7 @@ from langchain_openai import ChatOpenAI
 import json
 
 from ..config import CONFIG
-from ..logs import setup_logging
+from .logs import setup_logging
 from .exceptions import AgenteError
 
 logger = setup_logging(__name__)

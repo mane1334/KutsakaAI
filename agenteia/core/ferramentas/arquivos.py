@@ -10,7 +10,7 @@ from typing import List, Dict, Any, Optional
 from pathlib import Path
 from agenteia.config import CONFIG
 from ..exceptions import FileError, SecurityError, ValidationError
-from ...logs import setup_logging
+from ...core.logs import setup_logging
 from langchain.tools import BaseTool
 
 # Configuração de logging

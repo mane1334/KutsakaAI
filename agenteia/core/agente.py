@@ -36,7 +36,7 @@ from langchain_openai.embeddings import OpenAIEmbeddings
 from .config import CONFIG, validar_configuracoes, obter_perfil
 from .exceptions import AgenteError
 from .ferramentas import get_available_tools
-from ..logs import setup_logging
+from .logs import setup_logging
 from .gerenciador_modelos import GerenciadorModelos
 
 # Importar componentes para RAG
@@ -194,7 +194,8 @@ class AgenteIA:
         ]
         # Verificar se alguma palavra-chave está na mensagem (case-insensitive)
         mensagem_lower = mensagem.lower()
-        usar_coder = any(palavra.lower() in mensagem_lower for palavra in palavras_chave_codigo)
+        # Usar regex para garantir que palavras inteiras sejam correspondidas
+        usar_coder = any(re.search(r"\b" + re.escape(palavra.lower()) + r"\b", mensagem_lower) for palavra in palavras_chave_codigo)
         if usar_coder:
             logger.info("Detectada tarefa de programação, usando modelo coder.")
         return usar_coder
@@ -713,12 +714,12 @@ class AgenteIA:
 
         # 2. Preparar Prompt com RAG (if enabled)
         final_prompt = mensagem
-        if CONFIG["rag"]["enabled"] and self.vector_store:
+        if self.config["rag"]["enabled"] and self.vector_store:
             try:
                 self.logger.debug("RAG ativado. Buscando documentos relevantes...")
                 documentos_relevantes = self.vector_store.similarity_search(
                     mensagem,
-                    k=CONFIG["rag"]["k_retrieval"]
+                    k=self.config["rag"]["k_retrieval"]
                 )
                 if documentos_relevantes:
                     context = "\n".join([doc.page_content for doc in documentos_relevantes])
@@ -990,7 +991,7 @@ class AgenteIA:
             modelo_executor = self.config.get("openrouter", {}).get("modelo_coder")
         else:
             modelo_analise = None
-            modelo_executor = self.config.get("llm", {}).model
+            modelo_executor = self.config.get("modelo", {}).get("nome")
         self.gerenciador_modelos = GerenciadorModelos(
             modelo_executor=modelo_executor or "qwen3:1.7b",
             modelo_analise=modelo_analise,

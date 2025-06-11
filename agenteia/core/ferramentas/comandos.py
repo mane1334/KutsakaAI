@@ -11,7 +11,7 @@ import json
 from typing import Dict, List, Tuple, Optional, Any
 from datetime import datetime
 from ..exceptions import ToolError
-from ...logs import setup_logging
+from ...core.logs import setup_logging
 
 # Configuração de logging
 logger = logging.getLogger(__name__)
