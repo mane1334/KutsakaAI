@@ -80,7 +80,7 @@ X_TITLE="Seu App Name" # Optional: Sets X-Title header for OpenRouter
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/mane1334/KutsakaAI/agenteia.git
+git clone https://github.com/mane1334/KutsakaAI.git
 cd agenteia
 ```
 
